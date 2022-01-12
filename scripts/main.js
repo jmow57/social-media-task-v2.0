@@ -25,6 +25,7 @@ function set_settings(){
 	window.fullClicks = [];
 	window.currCondition = 0;
 	window.motivationRatings = [];
+	window.pracConfedRatings = [1,0,1,0,1,0];
 	window.confedRatings = [[1,5],[2,4],[3,3],[3,3],[4,2],[5,1]];
 	 //randomize waiting time between 6 and 8 seconds
 	window.waitTimings = [Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000,
@@ -141,7 +142,7 @@ function choose_avatar_practice(){
   			$('#avatarP').hide();
   			window.avatarPrac = $('.selected').attr('id');
   			window.avatarPracExport = /avatar_([^\s]+)/.exec(window.avatarPrac)[1];
-  			jsPsych.data.get().push(['PracticeAvatar',window.avatarPrac]);
+  			//jsPsych.data.get().push(['PracticeAvatar',window.avatarPrac]); //un-comment when running real task
     		qainstr1();  			
     	} else {
     		alertify.log("Please select an avatar","error");
@@ -183,7 +184,7 @@ function Answer_Prac(){
   			jsPsych.data.get().push(['PracticeResponse',window.weekend]);
     		Rating_Instr();  			
     	} else {
-    			alertify.log(errormsg,"error");
+    		alertify.log(errormsg,"error");
     	}
   	});  
 }
@@ -214,9 +215,13 @@ function Results_Demo(){
 }
 
 function Ratings_Practice(){
-	$('RatingsPractice').show();
+	$('#RatingsPractice').show();
+	$('.ViewMyUname').text(window.usernamePrac);
+	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatarPrac + ".png')");
+	$('.MyAnswer').text(window.weekend);
 	ShowRatingsProfilesPractice();
-	//only loop through 1 person's answers (both responses)
+	//TO CHANGE: In loop, add screen right after each rating where you see the confederate's rating of your response
+	//During this second (feedback) screen, might be helpful to add text explaining what the feedback means?
 }
 
 function ShowRatingsProfilesPractice(){
@@ -225,15 +230,57 @@ function ShowRatingsProfilesPractice(){
 	$('.wkdanswerdemoratings').text(window.profiles.confeds_prac[window.currConfed].response_wkd);
 }
 
-// function ContinueRatings(){
-// 	if (window.currConfed >= )
-// }
+function ContinueRatings(){
+	if (window.currConfed >= window.settings.profilespercondition-1) {
+		$('#RatingsPractice').hide();
+		window.currConfed = 0;
+		//jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
+		Prac_complete_instr();
+	} else {
+		window.currConfed++; //this is working in round 2
+		Ratings_Practice();
+	}
+}
+
+function FeedbackPrac(){
+	$('#FeedbackPractice').show();
+	if (window.pracConfedRatings[window.currConfed]==1){
+		$('.like_arrow').show();
+	}
+	if (window.pracConfedRatings[window.currConfed]==0){
+		$('.dislike_arrow').show();
+	}
+}
+
+$('#cont_pracRatings').on('click',function() {
+	$('#FeedbackPractice').hide();
+	$('#pracConfedLikeArrow').hide();
+	$('#pracConfedDislikeArrow').hide();
+	ContinueRatings();
+})
+
+$('#like_arrow_demoratings').on('click',function () {
+	window.practiceClicks[window.currConfed] = 1;
+	$('#RatingsPractice').hide();
+	FeedbackPrac();
+})
+
+$('#dislike_arrow_demoratings').on('click',function (){
+	window.practiceClicks[window.currConfed] = 0;
+	$('#RatingsPractice').hide();
+	FeedbackPrac();
+})
+
+function Prac_complete_instr(){
+	$('#PracContinueInstr').show();
+
+}
 
 
 set_settings();
 
 //intro_init();
 
-Rating_Instr();
+enter_username_practice();
 
 });

@@ -238,7 +238,26 @@ h3.pracQ {
   font-weight: bold;
 }
 
+.ViewMyUname {
+  position: absolute;
+  text-align: left;
+  top: 84px;
+  left: 118px;
+  color: #0048B5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .propicdemoratings {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: 75px 75px;
+  top: 28px;
+  left: 29px;
+}
+
+.ViewMyPropic {
   position: absolute;
   width: 75px;
   height: 75px;
@@ -252,6 +271,14 @@ h3.pracQ {
   top: 123px;
   left: 29px;
   right: 10px;
+  font-size: 20px;
+}
+
+.MyAnswer {
+  position: absolute;
+  top: 123px;
+  left: 29px;
+  right:  10px;
   font-size: 20px;
 }
 
@@ -355,7 +382,7 @@ p.viewInst {
   left: 15px;
 }
 
-.ViewMyPropic {
+/*.ViewMyPropic {
   position: absolute;
   width: 75px;
   height: 75px;
@@ -363,8 +390,8 @@ p.viewInst {
   top: 150px;
   left: 45px;
 }
-
-.MyAnswer {
+*/
+/*.MyAnswer {
   position: absolute;
   text-align: left;
   top: 100px;
@@ -372,7 +399,7 @@ p.viewInst {
   color: #0048B5;
   font-size: 24px;
   font-weight: bold;
-}
+}*/
 
 /* Position and style usernames within boxes */
 .ViewUname {
@@ -385,7 +412,7 @@ p.viewInst {
   font-weight: bold;
 }
 
-.ViewMyUname {
+/*.ViewMyUname {
   position: absolute;
   text-align: left;
   top: 205px;
@@ -393,7 +420,7 @@ p.viewInst {
   color: #0048B5;
   font-size: 24px;
   font-weight: bold;
-}
+}*/
 
 /* Position and style responses */
 
