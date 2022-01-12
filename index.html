@@ -103,7 +103,7 @@
 
 	<div id="RatingInstr" style="display:none;" class="instr">
 		<h1>Ratings: Practice</h1>
-		<p>After you connect with other participants, you will read their responses to the question that you just answered. They will also be able to read the response that you just wrote.
+		<p>After you connect with other participants, you will read each of their responses to the question that you just answered. They will also be able to read the response that you just wrote.
 			<br><br>
 			You will have an opportunity to respond to other participants' responses by either liking their response, or disliking their response.
 			<br><br>
@@ -112,532 +112,69 @@
 	</div>
 
 	<div id="RatingDemo" style="display:none;" class="instr">
-		<h1>Ratings: Practice</h1>
-		<p>You will read each participant's response one by one, as shown below. The other participants will also be reading and responding to your profile.
-			<br><br>
-			You can respond to posts by either clicking the like button <i class="like_arrow_demo"></i> if you like a post, or the dislike button <i class="dislike_arrow_demo"></i> if you do not like a post. See below for an example. Click "continue" to try for yourself.
-			<br><br>
-			<div class="WhiteBox">
+	<h1>Ratings: Practice</h1>
+	<p>You will read each participant's response one by one, as shown below. The other participants will also be reading and responding to your profile.
+		<br><br>
+		You can respond to posts by either clicking the like button <i class="like_arrow_demo"></i> if you like a post, or the dislike button <i class="dislike_arrow_demo"></i> if you do not like a post. See below for an example. Click "continue" to see what happens next.
+		<br><br>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
 				<div class="propic"></div>
-				<div class="uname_example">Username</div>
+				<div class="uname_example">My Username</div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="propic"></div>
+				<div class="uname_example">Other's Username</div>
 				<div class="like_arrow"></div>
 				<div class="dislike_arrow"></div>
 				<div class="leftline"></div>
 				<div class="rightline"></div>
 				<div class="clicktolike">Click this button if you LIKE a post</div>
 				<div class="clicktodislike">Click this button if you DO NOT like a post</div>
-			</div><br><br>
-			<button type="submit" id="cont_ratDemo" style="margin-bottom: 4%;">Continue</button>
+			</div>
+			<button type="submit" id="cont_ratDemo" style="position: absolute;bottom: -200px;">Continue</button>
+		</div>
 	</div>
+
+	<div id="ResultsDemo" style="display:none;" class="instr">
+		<h1>Ratings: Practice</h1>
+		<p>After you have rated a participant's response, you will then be able to see how they rated your response (whether they liked or disliked your response).
+			<br><br>
+			In this example, this person has <strong>LIKED</strong> your response. You can tell because there is a green <strong>LIKE</strong> arrow in your box.
+			<br><br>
+			Continue to the next page for a demonstration. As a reminder, you are currently interacting with <strong>computer generated</strong> profiles as practice for the real task later.
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="propic"></div>
+				<div class="uname_example">My Username</div>
+				<div class="like_arrow" style="right: 30px"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="propic"></div>
+				<div class="uname_example">Other's Username</div>
+			</div>
+			<button type="submit" id="cont_resDemo" style="position: absolute;bottom: -200px;">Continue</button>
+		</div>
 
 	<div id="RatingsPractice" style="display:none;" class="instr">
 		<h3 class="pracQ">What did you do last weekend?</h3>
-		<div class="WhiteBox">
-			<div class="usernamedemoratings"></div>
-			<div class="propicdemoratings"></div>
-			<div class="wkdanswerdemoratings"></div>
-			<div class="like_arrow" id="like_arrow_demoratings"></div>
-			<div class="dislike_arrow" id="dislike_arrow_demoratings"></div>
-		</div>
-	</div>
-
-	<div id="ViewingInstr" style="display:none;" class="instr">
-		<h1>Ratings: Practice</h1>
-		<p>After reading and rating other participants' posts, you will be directed to a screen where you can see all participants' total likes and dislikes, along with your own total likes and dislikes.
-			<br><br>
-			Click on the <strong>View Next Ratings</strong> button to view each participant's total likes and dislikes.
-			<br><br>
-			Continue to the next page for a demonstration. As a reminder, you are currently interacting with <strong>computer generated</strong> profiles as practice for the real task later.
-			<br><br></p>
-		<button type="submit" id="cont_viewinstr">Continue</button>
-	</div>
-
-
-	<div id="ViewingDemo" style="display:none;" class="instr">
-		<p class="viewInst">Click on the <strong>View Next Ratings</strong> button to see total likes and dislikes. You will not be able to continue until you have viewed all of the ratings.</p>
-		<div class="ViewBoxes">
-			<div class="ViewBox1">
-				<div id="ViewResp1" class="ViewResp"></div>
-				<div id="ViewUname1" class="ViewUname"></div>
-				<div id="ViewPropic1" class="ViewPropic"></div>
-				<div id="ViewLikeArrow1" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewLikeNum1" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewDislikeArrow1" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewDislikeNum1" class="ViewDislikeNum" style="display:none;"></div>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div id="MyPracticePic" class="propicdemoratings"></div>
+				<div id="MyPracticeUname" class="usernamedemoratings"></div>
+				<div id="MyPracticeAnswer" class="wkdanswerdemoratings"></div>
 			</div>
-			<div class="ViewBox2">
-				<div id="ViewResp2" class="ViewResp"></div>
-				<div id="ViewUname2" class="ViewUname"></div>
-				<div id="ViewPropic2" class="ViewPropic"></div>
-				<div id="ViewLikeArrow2" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewLikeNum2" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewDislikeArrow2" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewDislikeNum2" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox3">
-				<div id="ViewResp3" class="ViewResp"></div>
-				<div id="ViewUname3" class="ViewUname"></div>
-				<div id="ViewPropic3" class="ViewPropic"></div>
-				<div id="ViewLikeArrow3" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewLikeNum3" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewDislikeArrow3" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewDislikeNum3" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox4">
-				<div id="ViewResp4" class="ViewResp"></div>
-				<div id="ViewUname4" class="ViewUname"></div>
-				<div id="ViewPropic4" class="ViewPropic"></div>
-				<div id="ViewLikeArrow4" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewLikeNum4" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewDislikeArrow4" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewDislikeNum4" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox5">
-				<div id="ViewResp5" class="ViewResp"></div>
-				<div id="ViewUname5" class="ViewUname"></div>
-				<div id="ViewPropic5" class="ViewPropic"></div>
-				<div id="ViewLikeArrow5" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewLikeNum5" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewDislikeArrow5" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewDislikeNum5" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox6">
-				<div id="ViewResp6" class="ViewResp"></div>
-				<div id="ViewUname6" class="ViewUname"></div>
-				<div id="ViewPropic6" class="ViewPropic"></div>
-				<div id="ViewLikeArrow6" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewLikeNum6" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewDislikeArrow6" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewDislikeNum6" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewMyBox">
-				<div class="MyAnswer">My Answer</div>
-				<div class="ViewMyResp"></div>
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div id="ViewMyLikeArrowPrac" class="ViewMyLikeArrow" style="display:none;"></div>
-				<div id="ViewMyLikesPrac" class="ViewMyLikes" style="display:none;"></div>
-				<div id="ViewMyDislikeArrowPrac" class="ViewMyDislikeArrow" style="display:none;"></div>
-				<div id="ViewMyDislikesPrac" class="ViewMyDislikes" style="display:none;"></div>
-				<div id="ClickOnceMore" class="OnceMoreInstr" style="display:none;">Click on the <strong>View Next Ratings</strong> button one more time to see your own total likes and dislikes. As a reminder, this is a practice round with computer generated profiles.</div>
-				<div id="MyRatings1" class="MyRatings" style="display:none;">My Ratings</div>
-				<div class="Continue_Info">
-					<button type="submit" id="cont_viewbox">Continue</button>
-					<button type="submit" id="viewnext">View Next Ratings</button>
-				</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+				<div class="like_arrow" id="like_arrow_demoratings"></div>
+				<div class="dislike_arrow" id="dislike_arrow_demoratings"></div>
 			</div>
 		</div>
 	</div>
 
-	<div id="PracContinueInstr" style="display:none;" class="instr">
-		<h1>You have now completed the practice round</h1>
-		<p>Now that you know what to do, you will soon be connected to real participants, and complete the actual task.
-			<br><br>
-			As a reminder, the only information you will have about other participants is what they choose to share with you. Similarly, the only information they will have about you is what you choose to share with them.</p>
-		<button type="submit" id="cont_praccontinstr">Continue</button>
+
+			
 	</div>
-
-	<div id="GetStarted" style="display:none;" class="instr">
-		<h1>Let's Get Started</h1>
-		<p>Just like in the practice round, you will introduce yourself to the group by creating a profile with a username and picture.
-			<br><br>
-			As you interact with other participants, you will be able to see their username and picture as well.
-		<br><br></p>
-		<button type="submit" id="cont_getstarted">Continue</button>
-	</div>
-
-	<div id="UsernameEntry" style="display:none;" class="instr">
-		<h3>Please enter your name</h3>
-		<p>Could be your first name, nickname, or initials. Click "continue" when you are finished.<br><br></p>
-		<input type="text" id="username_entrybox" autcomplete="off" /><br><br>
-		<p>This is the username that other participants will see and associate with you and your profile.<br><br></p>
-		<button type="submit" id="cont_uname2">Continue</button>
-	</div>
-
-	<div id="avatarSelect" style="display:none;" class="instr">
-		<h3>Please select an avatar</h3>
-		<p>This is the avatar that other participants will see and associate with you and your profile.
-			<br><br></p>
-		<div class="avatars2"></div><br><br>
-		<button type="submit" id="cont_avatar2" style="margin-bottom: 4%">Continue</button>
-	</div>
-
-	<div id="realqa" style="display:none;" class="instr">
-		<h1>Question & Answer</h1>
-		<p>Just like in the practice round, you will now answer some questions about yourself.
-			<br><br>
-			After responding to each question, you will read and respond to other participants. Other participants will also be responding to your post.
-			<br><br></p>
-		<button type="submit" id="cont_realqa" style="margin-bottom: 4%;">Continue</button>
-	</div>
-
-	<div id="AnswerTV" style="display:none;" class="instr">
-		<h3>Question & Answer</h3>
-		<p>Describe your favorite movie or TV show. What is it about? Why do you like it?<br><br>
-		Click "Continue" when you are finished.</p>
-		<textarea id="TVmovie" autocomplete="off"/></textarea><br>
-		<span id="count_tvmovie">Characters left: 215</span><br><br><br>
-		<button type="submit" id="cont_tvmov">Continue</button>
-	</div>
-
-	<div id="AnswerFood" style="display:none;" class="instr">
-		<h3>Question & Answer</h3>
-		<p>Describe your favorite meal or type of food. Why do you like it?<br><br>
-		Click "Continue" when you are finished.</p>
-		<textarea id="Food" autocomplete="off"/></textarea><br>
-		<span id="count_food">Characters left: 215</span><br><br><br>
-		<button type="submit" id="cont_food">Continue</button>
-	</div>
-
-	<div id="PreConnectInstr" style="display:none;" class="instr">
-		<h1>You are about to enter the first chatroom</h1>
-		<p>You are about to enter a chatroom in which you will interact with others the same way you did in the practice session.
-			<br><br>
-			You will take part in five different chatrooms total, each of which will have a different group of people. After the first and third chatroom, you will be prompted to fill out a questionnaire.
-			<br><br></p>
-		<button type="submit" id="cont_preconnect">Connect to Chatroom</button>
-	</div>
-
-	<div id="ConnectScreen" style="display:none;" class="connect">
-		<h3 style="text-align:center;">Establishing connection</h3>
-  		<p style="text-align:center;">Please wait while you are being connected to the other participants in your group.</p><br><br>
-  		<img class="load" src='ajax-loader.gif' id="loader" style="display:block; margin-left:auto; margin-right:auto; width:50px; height:12.5px">
-  	</div>
-
-  	<div id="ConnectedtoPeople" style="display:none;" class="connect">
-  		<h1>You are now connected</h1>
-  		<p>You are now connected in a chat room with 6 other people on the internet.<br><br>
-  			<b>The following question will ask specifically about these 6 people you are connected with.</b></p><br><br>
-  		<button type="submit" id="cont_connect">Continue</button>
-	</div>
-
-	<!-- THIS PART IS NEW FOR CLICKABLE VERSION; DELETE IF NOT WORKING -->
-	<!-- <div onclick="getClick(event)"><p id="getClickX"></p></div> -->
-
-	<div id="MotivationRatings" style="display:none;" class="instr">
-		<h3 style="text-align:center;">How much do you want to participate in this <strong>new chatroom</strong> with these people?</h3>
-		<p style="text-align:center;">Click and hold the "move left" and "move right" buttons to move the line.<br>
-		Click "Confirm Answer" to confirm your answer, then click "Continue" to move on.</p>
-		<div id="mainHorizLine" class="line">
-			<div id='VertLine0'></div>
-			<div id='VertLine1'></div>
-			<div id='VertLine2'></div>
-			<div id='VertLine3'></div>
-			<div id='VertLine4'></div>
-			<div id='PreVertLineMove' class='VertLineMove'></div>
-			<div id='Marker0' class='Marker0'>Not at all</div>
-			<div id='Marker1' class='Marker1'>Slightly</div>
-			<div id='Marker2' class='Marker2'>Neutral</div>
-			<div id='Marker3' class='Marker3'>Moderately</div>
-			<div id='Marker4' class='Marker4'>As much as possible</div>
-			<button type="submit" id="moveLeft">Move Left</button>
-			<button type="submit" id="moveRight">Move Right</button>
-		</div>
-		<button type="submit" id="confirmMot" style="display:block; margin-left:auto; margin-right:auto;">Confirm Answer</button>
-		<button type="submit" id="cont_mot" style="display:none;">Continue</button>
-	</div>
-
-	<div id="Q1Reminder" style="display:none;" class="instr">
-		<h1>Question 1</h1>
-		<p>On the next page, you will read and rate the other participants' responses to the first question.
-			<br><br>
-			As a reminder, here is the first question, along with your response. This is what the other participants will be rating.<br><br></p>
-		<p style="text-align:center;"><b>Describe your favorite movie or TV show. What is it about? Why do you like it?</b></p>
-		<div id="reminderbox" class="WhiteBox">
-			<div id='UnameReminder'></div>
-			<div id='Resp1Reminder'></div>
-			<div id='AvatarReminder'></div>
-		</div>
-		<button type="submit" id="cont_reminder1" style="margin-bottom: 20px;">Continue to Ratings</button>
-	</div>
-
-	<div id="GiveRatingsTvMovie" style="display:none;" class="instr">
-		<h3 class="pracQ">Describe your favorite movie or TV show. What is it about? Why do you like it?</h3>
-		<div class="WhiteBox">
-			<div class="usernamedemoratings"></div>
-			<div class="propicdemoratings"></div>
-			<div class="wkdanswerdemoratings"></div>
-			<div class="like_arrow" id="like_arrow_ratings1"></div>
-			<div class="dislike_arrow" id="dislike_arrow_ratings1"></div>
-		</div>
-	</div>
-
-	<div id="WaitScreen" style="display:none;" class="instr">
-		<h3 style="text-align:center;">Waiting for others to finish their ratings...</h3><br><br>
-  		<img class="load" src='ajax-loader.gif' id="waiting" style="display:block; margin-left:auto; margin-right:auto; width:50px; height:12.5px">
-	</div>
-
-	<div id="RatingsView" style="display:none;" class="instr">
-		<div class="ViewBoxes">
-			<div class="ViewBox1">
-				<div id="ViewtvResp1" class="ViewResp"></div>
-				<div id="ViewtvUname1" class="ViewUname"></div>
-				<div id="ViewtvPropic1" class="ViewPropic"></div>
-				<div id="ViewtvLikeArrow1" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewtvLikeNum1" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewtvDislikeArrow1" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewtvDislikeNum1" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox2">
-				<div id="ViewtvResp2" class="ViewResp"></div>
-				<div id="ViewtvUname2" class="ViewUname"></div>
-				<div id="ViewtvPropic2" class="ViewPropic"></div>
-				<div id="ViewtvLikeArrow2" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewtvLikeNum2" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewtvDislikeArrow2" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewtvDislikeNum2" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox3">
-				<div id="ViewtvResp3" class="ViewResp"></div>
-				<div id="ViewtvUname3" class="ViewUname"></div>
-				<div id="ViewtvPropic3" class="ViewPropic"></div>
-				<div id="ViewtvLikeArrow3" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewtvLikeNum3" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewtvDislikeArrow3" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewtvDislikeNum3" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox4">
-				<div id="ViewtvResp4" class="ViewResp"></div>
-				<div id="ViewtvUname4" class="ViewUname"></div>
-				<div id="ViewtvPropic4" class="ViewPropic"></div>
-				<div id="ViewtvLikeArrow4" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewtvLikeNum4" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewtvDislikeArrow4" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewtvDislikeNum4" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox5">
-				<div id="ViewtvResp5" class="ViewResp"></div>
-				<div id="ViewtvUname5" class="ViewUname"></div>
-				<div id="ViewtvPropic5" class="ViewPropic"></div>
-				<div id="ViewtvLikeArrow5" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewtvLikeNum5" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewtvDislikeArrow5" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewtvDislikeNum5" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox6">
-				<div id="ViewtvResp6" class="ViewResp"></div>
-				<div id="ViewtvUname6" class="ViewUname"></div>
-				<div id="ViewtvPropic6" class="ViewPropic"></div>
-				<div id="ViewtvLikeArrow6" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewtvLikeNum6" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewtvDislikeArrow6" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewtvDislikeNum6" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewMyBox">
-				<div class="MyAnswer">My Answer</div>
-				<div class="ViewMyResp"></div>
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div id="ViewMytvLikeArrowPrac" class="ViewMyLikeArrow" style="display:none;"></div>
-				<div id="ViewMytvLikesPrac" class="ViewMyLikes" style="display:none;"></div>
-				<div id="ViewMytvDislikeArrowPrac" class="ViewMyDislikeArrow" style="display:none;"></div>
-				<div id="ViewMytvDislikesPrac" class="ViewMyDislikes" style="display:none;"></div>
-				<div id="MyRatings2" class="MyRatings" style="display:none;">My Ratings</div>
-				<div class="Continue_Info">
-					<button type="submit" id="cont_tvviewbox">Continue</button>
-					<button type="submit" id="tvviewnext">View Next Ratings</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="Q2Reminder" style="display:none;" class="instr">
-		<h1>Question 2</h1>
-		<p>On the next page, you will read and rate the other participants' responses to the second question.
-			<br><br>
-			As a reminder, here is the second question, along with your response. Similar to the previous round, this is what the other participants will be rating.<br><br></p>
-		<p style="text-align:center;"><b>Describe your favorite meal or type of food. Why do you like it?</b></p>
-		<div id="reminderbox" class="WhiteBox">
-			<div id='Uname2Reminder'></div>
-			<div id='Resp2Reminder'></div>
-			<div id='Avatar2Reminder'></div>
-		</div>
-		<button type="submit" id="cont_reminder2" style="margin-bottom: 20px;">Continue to Ratings</button>
-	</div>
-
-	<div id="GiveRatingsFood" style="display:none;" class="instr">
-		<h3 class="pracQ">Describe your favorite meal or type of food. Why do you like it?</h3>
-		<div class="WhiteBox">
-			<div class="usernamedemoratings"></div>
-			<div class="propicdemoratings"></div>
-			<div class="wkdanswerdemoratings"></div>
-			<div class="like_arrow" id="like_arrow_ratings2"></div>
-			<div class="dislike_arrow" id="dislike_arrow_ratings2"></div>
-		</div>
-	</div>
-
-	<div id="RatingsView2" style="display:none;" class="instr">
-		<div class="ViewBoxes">
-			<div class="ViewBox1">
-				<div id="ViewfoodResp1" class="ViewResp"></div>
-				<div id="ViewfoodUname1" class="ViewUname"></div>
-				<div id="ViewfoodPropic1" class="ViewPropic"></div>
-				<div id="ViewfoodLikeArrow1" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewfoodLikeNum1" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewfoodDislikeArrow1" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewfoodDislikeNum1" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox2">
-				<div id="ViewfoodResp2" class="ViewResp"></div>
-				<div id="ViewfoodUname2" class="ViewUname"></div>
-				<div id="ViewfoodPropic2" class="ViewPropic"></div>
-				<div id="ViewfoodLikeArrow2" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewfoodLikeNum2" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewfoodDislikeArrow2" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewfoodDislikeNum2" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox3">
-				<div id="ViewfoodResp3" class="ViewResp"></div>
-				<div id="ViewfoodUname3" class="ViewUname"></div>
-				<div id="ViewfoodPropic3" class="ViewPropic"></div>
-				<div id="ViewfoodLikeArrow3" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewfoodLikeNum3" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewfoodDislikeArrow3" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewfoodDislikeNum3" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox4">
-				<div id="ViewfoodResp4" class="ViewResp"></div>
-				<div id="ViewfoodUname4" class="ViewUname"></div>
-				<div id="ViewfoodPropic4" class="ViewPropic"></div>
-				<div id="ViewfoodLikeArrow4" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewfoodLikeNum4" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewfoodDislikeArrow4" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewfoodDislikeNum4" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox5">
-				<div id="ViewfoodResp5" class="ViewResp"></div>
-				<div id="ViewfoodUname5" class="ViewUname"></div>
-				<div id="ViewfoodPropic5" class="ViewPropic"></div>
-				<div id="ViewfoodLikeArrow5" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewfoodLikeNum5" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewfoodDislikeArrow5" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewfoodDislikeNum5" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewBox6">
-				<div id="ViewfoodResp6" class="ViewResp"></div>
-				<div id="ViewfoodUname6" class="ViewUname"></div>
-				<div id="ViewfoodPropic6" class="ViewPropic"></div>
-				<div id="ViewfoodLikeArrow6" class="ViewLikeArrow" style="display:none;"></div>
-				<div id="ViewfoodLikeNum6" class="ViewLikeNum" style="display:none;"></div>
-				<div id="ViewfoodDislikeArrow6" class="ViewDislikeArrow" style="display:none;"></div>
-				<div id="ViewfoodDislikeNum6" class="ViewDislikeNum" style="display:none;"></div>
-			</div>
-			<div class="ViewMyBox">
-				<div class="MyAnswer">My Answer</div>
-				<div class="ViewMyResp"></div>
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div id="ViewMyfoodLikeArrowPrac" class="ViewMyLikeArrow" style="display:none;"></div>
-				<div id="ViewMyfoodLikesPrac" class="ViewMyLikes" style="display:none;"></div>
-				<div id="ViewMyfoodDislikeArrowPrac" class="ViewMyDislikeArrow" style="display:none;"></div>
-				<div id="ViewMyfoodDislikesPrac" class="ViewMyDislikes" style="display:none;"></div>
-				<div id="MyRatings3" class="MyRatings" style="display:none;">My Ratings</div>
-				<div class="Continue_Info">
-					<button type="submit" id="cont_foodviewbox">Continue</button>
-					<button type="submit" id="foodviewnext">View Next Ratings</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="MotivationRatingsPost" style="display:none;" class="instr">
-		<h3 style="text-align:center;">How much do you want to <strong>keep</strong> participating in this chatroom with these people?</h3>
-		<p style="text-align:center;">Click and hold the "move left" and "move right" buttons to move the line.<br>
-		Click "Confirm Answer" to confirm your answer, then click "Continue" to move on.</p>
-		<div id="mainHorizLine" class="line">
-			<div id='VertLine0'></div>
-			<div id='VertLine1'></div>
-			<div id='VertLine2'></div>
-			<div id='VertLine3'></div>
-			<div id='VertLine4'></div>
-			<div id='PostVertLineMove' class='VertLineMove'></div>
-			<div id='Marker0' class='Marker0'>Not at all</div>
-			<div id='Marker1' class='Marker1'>Slightly</div>
-			<div id='Marker2' class='Marker2'>Neutral</div>
-			<div id='Marker3' class='Marker3'>Moderately</div>
-			<div id='Marker4' class='Marker4'>As much as possible</div>
-			<button type="submit" id="PostmoveLeft">Move Left</button>
-			<button type="submit" id="PostmoveRight">Move Right</button>
-		</div>
-		<button type="submit" id="PostconfirmMot" style="display:block; margin-left:auto; margin-right:auto;">Confirm Answer</button>
-		<button type="submit" id="Postcont_mot" style="display:none;">Continue</button>
-	</div>
-
-	<div id="Completed_Round" style="display:none;" class="instr">
-		<h1>You have now completed this round of ratings.</h1>
-		<p>You will now be connected to another group of participants. Similar to the previous round, you will respond to the other participants' responses and be able to see whether they liked or disliked your responses.
-			<br><br>
-			Please continue to connect with the next group of participants.
-			<br><br></p>
-		<button type="submit" id="cont_complete" style="margin-bottom: 20px;">Continue to Next Chatroom</button>
-	</div>
-
-	<div id="PostRewardQs" style="display:none;" class="instr">
-		<p style="text-align:center; font-size:24px">Before you continue, please answer the following questions. 
-			<br><br> For each question, please choose the number that best represents how you feel <b>in this moment.</b></p>
-		<div id='postQuestions' style="text-align:center; font-size:24px; font-weight:bold;"></div>
-		<div id="mainHorizLine" class="line">
-			<div id='VertLine0'></div>
-			<div id='VertLine1'></div>
-			<div id='VertLine2'></div>
-			<div id='VertLine3'></div>
-			<div id='VertLine4'></div>
-			<div id='qVertLineMove' class='VertLineMove'></div>
-			<div id='Marker0_num' class='Marker0' style="left:-3px;">1</div>
-			<div id='Marker1_num' class='Marker1' style="left:172px;">2</div>
-			<div id='Marker2_num' class='Marker2' style="left:348px;">3</div>
-			<div id='Marker3_num' class='Marker3' style="left:522px;">4</div>
-			<div id='Marker4_num' class='Marker4' style="left:700px;">5</div>
-			<div id='Marker0_q' class='Marker0' style="top:172px;left:-31px;">Not at all</div>
-			<div id='Marker1_q' class='Marker1' style="top:172px;left:150px;">Slightly</div>
-			<div id='Marker2_q' class='Marker2' style="top:172px;left:328px;">Neutral</div>
-			<div id='Marker3_q' class='Marker3' style="top:172px;left:488px;">Moderately</div>
-			<div id='Marker4_q' class='Marker4' style="top:172px;left:668px;">Extremely</div>
-			<button type="submit" id="qmoveLeft">Move Left</button>
-			<button type="submit" id="qmoveRight">Move Right</button>
-		</div>
-		<button type="submit" id="qconfirmMot" style="display:block; margin-left:auto; margin-right:auto;">Confirm Answer</button>
-		<button type="submit" id="qcont_mot" style="display:none; margin-left:auto; margin-right:auto;">Continue</button>
-	</div>
-
-	<div id="PostRejectQs" style="display:none;" class="instr">
-		<p style="text-align:center; font-size:24px">Before you continue, please answer the following questions. 
-			<br><br> For each question, please choose the number that best represents how you feel <b>in this moment.</b></p>
-		<div id='postQuestions2' style="text-align:center; font-size:24px; font-weight:bold;"></div>
-		<div id="mainHorizLine" class="line">
-			<div id='VertLine0'></div>
-			<div id='VertLine1'></div>
-			<div id='VertLine2'></div>
-			<div id='VertLine3'></div>
-			<div id='VertLine4'></div>
-			<div id='q2VertLineMove' class='VertLineMove'></div>
-			<div id='Marker0_num' class='Marker0' style="left:-3px;">1</div>
-			<div id='Marker1_num' class='Marker1' style="left:172px;">2</div>
-			<div id='Marker2_num' class='Marker2' style="left:348px;">3</div>
-			<div id='Marker3_num' class='Marker3' style="left:522px;">4</div>
-			<div id='Marker4_num' class='Marker4' style="left:700px;">5</div>
-			<div id='Marker0_q' class='Marker0' style="top:172px;left:-31px;">Not at all</div>
-			<div id='Marker1_q' class='Marker1' style="top:172px;left:150px;">Slightly</div>
-			<div id='Marker2_q' class='Marker2' style="top:172px;left:328px;">Neutral</div>
-			<div id='Marker3_q' class='Marker3' style="top:172px;left:488px;">Moderately</div>
-			<div id='Marker4_q' class='Marker4' style="top:172px;left:668px;">Extremely</div>
-			<button type="submit" id="q2moveLeft">Move Left</button>
-			<button type="submit" id="q2moveRight">Move Right</button>
-		</div>
-		<button type="submit" id="q2confirmMot" style="display:block; margin-left:auto; margin-right:auto;">Confirm Answer</button>
-		<button type="submit" id="q2cont_mot" style="display:none; margin-left:auto; margin-right:auto;">Continue</button>
-	</div>
-
-	<div id="QsCompleted" style="display:none;" class="instr">
-		<p style="font-size:24px; font-weight:bold;">Thank you for your responses. You will now be connected to your next chatroom.
-			<br><br></p>
-		<button type="submit" id="cont_qcomp" style="margin-bottom:20px;">Continue</button>
-	</div>
-
-	<div id="ThankYou" style="display:none;" class="instr">
-		<h1>You have now completed the study. Thank you!</h1>
-		<p>You may now close your browser window.</p>
-	</div>
-	<div id="jspsych-target" style="display:none;"></div>
-  </body>
-</html> 
+	

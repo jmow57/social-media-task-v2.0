@@ -1,0 +1,776 @@
+
+/* General styles for header text */
+h1 {
+  font-family: 'Helvetica',Helvetica,sans-serif;
+  text-align: left;
+  text-justify: inter-word;
+  margin: 1em;
+  margin-left: 4%;
+  color: #000000;
+}
+
+h3 {
+  font-family: 'Helvetica',Helvetica,sans-serif;
+  text-align: left;
+  text-justify: inter-word;
+  margin: 2em;
+  margin-left: 4%;
+  color: #000000;
+}
+
+/* General styles for body text */
+p {
+  font-family: 'Helvetica',Helvetica,sans-serif;
+  font-size: 18px;
+  text-align: left;
+  text-justify: inter-word;
+  margin: 1em;
+  margin-left: 4%;
+  color: #000000;
+  line-height: 2;
+}
+
+/* General image styles */
+img {
+  width: 100px;
+  margin-left: 4%;
+}
+/*img:hover{
+  box-shadow: 0 0 2px 1px rgba(0,140,186,0.5);
+}*/
+
+/* How the buttons/textboxes should look across pages */
+button {
+  margin-left: 4%;
+}
+
+input {
+  margin-left: 4%;
+}
+
+/* Avatar styles */
+img.avatar {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+    margin-left: 4%;
+}
+
+img.avatar:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+img.avatar.selected {
+  outline: 5px solid #B7BCBF;
+}
+
+.avatar {
+  /*border-radius: 8px;*/
+  cursor: pointer;  
+  width: 100px;
+  height: 100px;
+  border: 1px solid #94969c;
+}
+
+/* Textbox styles for the larger input boxes */
+textarea {
+  width: 500px;
+  height: 100px;
+  max-height: 100px;
+  margin-left: 4%;
+}
+
+span {
+  margin-left: 4%;
+}
+
+/* Styles for the demo "ratings" page within the practice portion */
+#like_demo {
+  margin-top: 200px;
+  margin-left: 400px;
+}
+
+.like_arrow_demo {
+  display: inline-block;
+  background-image: url("../images/GreenUpArrow.png");
+  background-size: 26px 26px;
+  background-position: 0 0;
+  width: 26px;
+  height: 24px;
+}
+
+.dislike_arrow_demo {
+  display: inline-block;
+  background-image: url("../images/RedDownArrow.png");
+  background-size: 26px 26px;
+  background-position: 0 0;
+  width: 26px;
+  height: 24px;
+}
+
+/* The demo box on the demo "ratings" page */
+
+.BoxSetup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.WhiteBoxLeft {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  background-color: #FFFFFF;
+  margin-left: 300px;
+  margin-right: auto;
+  margin-bottom: 4%;
+  border: 1px solid #94969c;
+}
+
+.WhiteBoxRight {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  background-color: #FFFFFF;
+  margin-left: 800px;
+  margin-right: auto;
+  margin-bottom: 4%;
+  border: 1px solid #94969c;
+}
+
+.propic {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-image: url("../images/profpic1.png");
+  background-size: 75px 75px;
+  top: 28px;
+  left: 29px;
+}
+
+.uname_example {
+  position: absolute;
+  text-align: left;
+  top: 84px;
+  left: 118px;
+  color: #0048B5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.like_arrow {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/GreenUpArrow.png");
+  background-size: 50px 50px;
+}
+
+/*.like_arrow:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}*/
+
+.dislike_arrow {
+  position: absolute;
+  bottom: 28px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/RedDownArrow.png");
+  background-size: 50px 50px;
+}
+
+.leftline {
+  position: absolute;
+  top: 200px;
+  left: -50px;
+  width: 225px;
+  height: 150px;
+  background-image: url("../images/Line2.png");
+  background-size: 225px 150px;
+}
+
+.rightline {
+  position: absolute;
+  top: 200px;
+  right: -100px;
+  width: 115px;
+  height: 130px;
+  background-image: url("../images/Line1.png");
+  background-size: 115px 130px;
+}
+
+.clicktolike {
+  position: absolute;
+  top: 150px;
+  left: -190px;
+  text-align: left;
+  width: 160px;
+  font-size: 20px;
+  color: #000000;
+}
+
+.clicktodislike {
+  position: absolute;
+  top: 130px;
+  right: -240px;
+  text-align: left;
+  width: 162px;
+  font-size: 20px;
+  color: #000000;
+}
+
+/* Styles for running the practice ratings */
+h3.pracQ {
+  text-align: center;
+}
+
+.usernamedemoratings {
+  position: absolute;
+  text-align: left;
+  top: 84px;
+  left: 118px;
+  color: #0048B5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.propicdemoratings {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: 75px 75px;
+  top: 28px;
+  left: 29px;
+}
+
+.wkdanswerdemoratings {
+  position: absolute;
+  top: 123px;
+  left: 29px;
+  right: 10px;
+  font-size: 20px;
+}
+
+/* Styles for showing total likes and dislikes */
+/* Instructions */
+p.viewInst {
+  text-align: center;
+  font-size: 18px;
+}
+
+.OnceMoreInstr {
+  position: absolute;
+  font-size: 18px;
+  top: 488px;
+  left: 20px;
+  right: 50px;
+}
+
+/* Create and position boxes on screen */
+.ViewBoxes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ViewBox1 {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: #FFFFFF;
+  margin-left: 530px;
+  border: 1px solid #94969c;
+}
+
+.ViewBox2 {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: #FFFFFF;
+  margin-left: 530px;
+  margin-top: 100px;
+  border: 1px solid #94969c;
+}
+
+.ViewBox3 {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: #FFFFFF;
+  margin-left: 530px;
+  margin-top: 200px;
+  border: 1px solid #94969c;
+}
+
+.ViewBox4 {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: #FFFFFF;
+  margin-left: 530px;
+  margin-top: 300px;
+  border: 1px solid #94969c;
+}
+
+.ViewBox5 {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: #FFFFFF;
+  margin-left: 530px;
+  margin-top: 400px;
+  border: 1px solid #94969c;
+}
+
+.ViewBox6 {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  background-color: #FFFFFF;
+  margin-left: 530px;
+  margin-top: 500px;
+  border: 1px solid #94969c;
+}
+
+.ViewMyBox {
+  position: absolute;
+  left: 30px;
+  width: 500px;
+  height: 600px;
+  background-color: #FFFFFF;
+  border: 1px solid #94969c;
+}
+
+/* Position profile pictures within boxes */
+.ViewPropic {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: 75px 75px;
+  top: 13px;
+  left: 15px;
+}
+
+.ViewMyPropic {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: 75px 75px;
+  top: 150px;
+  left: 45px;
+}
+
+.MyAnswer {
+  position: absolute;
+  text-align: left;
+  top: 100px;
+  left: 45px;
+  color: #0048B5;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Position and style usernames within boxes */
+.ViewUname {
+  position: absolute;
+  text-align: left;
+  top: 40px;
+  left: 105px;
+  color: #0048B5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.ViewMyUname {
+  position: absolute;
+  text-align: left;
+  top: 205px;
+  left: 140px;
+  color: #0048B5;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Position and style responses */
+
+.ViewResp {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 220px;
+  right: 10px;
+  font-size: 15px;
+}
+
+.ViewMyResp {
+  position: absolute;
+  top: 240px;
+  left: 45px;
+  right: 100px;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.MyRatings {
+  position: absolute;
+  top: 355px;
+  left: 45px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0048B5;
+}
+
+/* Format continue boxes */
+
+#cont_viewbox {
+  position: absolute;
+  top: 400px;
+  left: 45px;
+}
+
+#viewnext {
+  position: absolute;
+  top: 400px;
+  left: 200px;
+}
+
+/* Format likes and dislikes for the ratings viewing screen */
+.ViewLikeArrow {
+  position: absolute;
+  left: 600px;
+  bottom: 0px;
+  width: 32px;
+  height: 30px;
+  background-image: url("../images/GreenUpArrow.png");
+  background-size: 32px 30px;
+}
+
+.ViewLikeNum {
+  position: absolute;
+  left: 645px;
+  bottom: 5px;
+  color: #5DA526;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ViewDislikeArrow {
+  position: absolute;
+  left: 675px;
+  bottom: 0px;
+  width: 32px;
+  height: 30px;
+  background-image: url("../images/RedDownArrow.png");
+  background-size: 32px 30px;
+}
+
+.ViewDislikeNum {
+  position: absolute;
+  left: 720px;
+  bottom: 5px;
+  color: #CD190D;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ViewMyLikeArrow {
+  position: absolute;
+  left: 216px;
+  top: 345px;
+  width: 40px;
+  height: 38px;
+  background-image: url("../images/GreenUpArrow.png");
+  background-size: 40px 38px;
+}
+
+.ViewMyLikes {
+  position: absolute;
+  left: 265px;
+  top: 355px;
+  color: #5DA526;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.ViewMyDislikeArrow {
+  position: absolute;
+  left: 306px;
+  top: 345px;
+  width: 40px;
+  height: 38px;
+  background-image: url("../images/RedDownArrow.png");
+  background-size: 40px 38px;
+}
+
+.ViewMyDislikes {
+  position: absolute;
+  left: 355px;
+  top: 355px;
+  color: #CD190D;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Formatting for motivation ratings */
+
+#mainHorizLine {
+  position: relative;
+  width: 700px;
+  height: 100px;
+  border-bottom: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 200px;
+}
+
+#VertLine0 {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  border-left: 2px solid black;
+  margin-left: auto;
+  margin-top: 70px;
+}
+
+.Marker0 {
+  position: absolute;
+  left: -30px;
+  top: 150px;
+  font-weight: bold;
+}
+
+#VertLine1 {
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  border-left: 1px solid black;
+  margin-left: 175px;
+  margin-top: 75px;
+}
+
+.Marker1 {
+  position: absolute;
+  left: 150px;
+  top: 150px;
+  font-weight: bold;
+}
+
+#VertLine2 {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  border-left: 2px solid black;
+  margin-left: 350px;
+  margin-top: 70px;
+}
+
+.Marker2 {
+  position: absolute;
+  left: 328px;
+  top: 150px;
+  font-weight: bold;
+}
+
+#VertLine3 {
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  border-left: 1px solid black;
+  margin-left: 525px;
+  margin-top: 75px;
+}
+
+.Marker3 {
+  position: absolute;
+  left: 488px;
+  top: 150px;
+  font-weight: bold;
+}
+
+#VertLine4 {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  border-left: 2px solid black;
+  margin-left: 700px;
+  margin-top: 70px;
+}
+
+.Marker4 {
+  position: absolute;
+  left: 636px;
+  top: 150px;
+  right: -100px;
+  font-weight: bold;
+}
+
+.VertLineMove {
+  position: absolute;
+  width: 0px;
+  height: 70px;
+  border-left: 3px solid black;
+  margin-left: 350px;
+  margin-top: 65px;
+}
+
+.VertLineMove.confirmed {
+  outline: 5px solid #A4FDFF;
+}
+
+#moveLeft {
+  position: absolute;
+  margin-left: -41px;
+  margin-top: 200px;
+}
+
+#PostmoveLeft {
+  position: absolute;
+  margin-left: -41px;
+  margin-top: 200px;
+}
+
+#qmoveLeft {
+  position: absolute;
+  margin-left: -41px;
+  margin-top: 200px;
+}
+
+#q2moveLeft {
+  position: absolute;
+  margin-left: -41px;
+  margin-top: 200px;
+}
+
+#moveRight {
+  position: absolute;
+  margin-left: 659px;
+  margin-top: 200px;
+}
+
+#PostmoveRight {
+  position: absolute;
+  margin-left: 659px;
+  margin-top: 200px;
+}
+
+#qmoveRight {
+  position: absolute;
+  margin-left: 659px;
+  margin-top: 200px;
+}
+
+#q2moveRight {
+  position: absolute;
+  margin-left: 659px;
+  margin-top: 200px;
+}
+
+#cont_mot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Postcont_mot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#qcont_mot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#q2cont_mot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Formatting reminder screen images */
+#UnameReminder {
+  position: absolute;
+  text-align: left;
+  top: 84px;
+  left: 118px;
+  color: #0048B5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#Uname2Reminder {
+  position: absolute;
+  text-align: left;
+  top: 84px;
+  left: 118px;
+  color: #0048B5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#Resp1Reminder {
+  position: absolute;
+  top: 123px;
+  left: 29px;
+  right: 10px;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+#Resp2Reminder {
+  position: absolute;
+  top: 123px;
+  left: 29px;
+  right: 10px;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+#AvatarReminder {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: 75px 75px;
+  top: 28px;
+  left: 29px;
+}
+
+#Avatar2Reminder {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: 75px 75px;
+  top: 28px;
+  left: 29px;
+}
+
+/* Format boxes in real rounds */
+#cont_tvviewbox {
+  position: absolute;
+  top: 400px;
+  left: 45px;
+}
+
+#tvviewnext {
+  position: absolute;
+  top: 400px;
+  left: 200px;
+}
+
+#cont_foodviewbox {
+  position: absolute;
+  top: 400px;
+  left: 45px;
+}
+
+#foodviewnext {
+  position: absolute;
+  top: 400px;
+  left: 200px;
+}
