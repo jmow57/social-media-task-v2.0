@@ -273,14 +273,170 @@ $('#dislike_arrow_demoratings').on('click',function (){
 
 function Prac_complete_instr(){
 	$('#PracContinueInstr').show();
-
+	$('#cont_praccontinstr').on('click',function () {
+		$('#PracContinueInstr').hide();
+		LetsGetStarted();
+	})
 }
 
+function LetsGetStarted() {
+	$('#GetStarted').show();
+	$('#cont_getstarted').on('click',function() {
+		$('#GetStarted').hide();
+		enter_username();
+	})
+}
+
+function enter_username() {
+	$('#UsernameEntry').show();
+	$('#cont_uname2').on('click',function(){
+		var error = 0;
+		var uname = $('#username_entrybox').val()
+
+		if(uname===""){
+			error=1;
+			errormsg='Please enter text';
+			uname="undefined";
+		}
+		if(!uname.match(/^[a-zA-Z0-9]+$/i)){
+			error=1;
+			errormsg='Please only letters (and no spaces)';
+		}
+		if(error===0){
+			$('#UsernameEntry').hide();
+			window.username = $('#username_entrybox').val();
+			jsPsych.data.get().push(['Username',window.username]);
+			choose_avatar();
+		} else {
+			alertify.log(errormsg,"error");
+		}
+	})
+}
+
+function choose_avatar() {
+	$('#avatarSelect').show();
+	var numavatars = window.settings.numberofavatars;
+	for(var i=0; i<numavatars; i++){
+		$('.avatars2').append('<img id="avatar_' + i+ '" src="avatars/avatar_' + i + '.png" class="avatar" />')
+	}
+
+	$('.avatar').on('click',function(){
+  		$('.avatar').removeClass('selected');
+  		$(this).addClass('selected');
+	})
+
+    $('#cont_avatar2').on('click',function() {
+    	if($('.selected').length === 1) {
+  			$('#avatarSelect').hide();
+  			window.avatar = $('.selected').attr('id');
+  			window.avatarExport = /avatar_([^\s]+)/.exec(window.avatar)[1];
+  			jsPsych.data.get().push(['Avatar',window.avatar]);
+    		qainstr2();  			
+    	} else {
+    		alertify.log("Please select an avatar","error");
+    	}
+    });
+}
+
+function qainstr2 () {
+	$('#realqa').show();
+	$('#cont_realqa').on('click', function() {
+		$('#realqa').hide();
+		Answer_TV();
+	})
+}
+
+function Answer_TV() {
+	$('#AnswerTV').show();
+	$('#TVmovie').keyup(function(){
+		$('#count_tvmovie').text("Characters left: " + (215-$(this).val().length))
+	});
+
+	$('#cont_tvmov').on('click',function() {
+  		var error = 0;
+  		if($('#TVmovie').val() == "") {
+  			error = 1;
+  			errormsg = 'Please enter text.';
+  		}
+  		if($('#TVmovie').val() !== "" && $('#TVmovie').val().length < 100) {
+  			error = 1;
+  			errormsg = 'Please write a bit more.';
+			}
+  		if($('#TVmovie').val().length > 215) {
+  			error = 1;
+  			errormsg = 'You are over the text limit.';
+  		}  		
+  		if(error == 0) {
+  			$('#AnswerTV').hide();
+  			window.tvmovie = $('#TVmovie').val();
+  			jsPsych.data.get().push(['TVMovieResponse',window.tvmovie]);
+    		Answer_Food(); 			
+    	} else {
+    		alertify.log(errormsg,"error");
+    	}
+  	});  
+}
+
+function Answer_Food() {
+	$('#AnswerFood').show();
+	$('#Food').keyup(function(){
+		$('#count_food').text("Characters left: " + (215-$(this).val().length))
+	});
+
+	$('#cont_food').on('click',function() {
+  		var error = 0;
+  		if($('#Food').val() == "") {
+  			error = 1;
+  			errormsg = 'Please enter text.';
+  		}
+  		if($('#Food').val() !== "" && $('#Food').val().length < 100) {
+  			error = 1;
+  			errormsg = 'Please write a bit more.';
+			}
+  		if($('#Food').val().length > 215) {
+  			error = 1;
+  			errormsg = 'You are over the text limit.';
+  		}  		
+  		if(error == 0) {
+  			$('#AnswerFood').hide();
+  			window.food = $('#Food').val();
+  			jsPsych.data.get().push(['FoodResponse',window.food]);
+    		Pre_Connect_Instr(); 			
+    	} else {
+    		alertify.log(errormsg,"error");
+    	}
+  	});  
+}
+
+function Pre_Connect_Instr() {
+	$('#PreConnectInstr').show();
+	$('#cont_preconnect').on('click',function() {
+		$('#PreConnectInstr').hide();
+		Connecting();
+	});
+}
+
+function Connecting() {
+	 $('#ConnectScreen').show();
+
+  	setTimeout(function() {
+  		$('#ConnectedtoPeople').show();
+  		$('#ConnectScreen').hide();
+  	}, window.connectTimings[window.currCondition]); //original should be set to 8000
+	
+  	$('#cont_connect').on('click',function() {
+		$('#ConnectScreen').hide();
+		$('#ConnectedtoPeople').hide();
+  		motivation_rating_pre();  			
+  	});	
+}
 
 set_settings();
 
 //intro_init();
 
-enter_username_practice();
+//enter_username();
+
+Pre_Connect_Instr();
 
 });
