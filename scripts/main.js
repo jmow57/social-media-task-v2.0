@@ -18,15 +18,18 @@ $(function() {
 function set_settings(){
 	window.settings = [];
 	window.settings.numberofavatars = 48;
-	window.settings.profilespercondition = 6;
 	window.currConfed = 0;
+	window.totalConfeds = 30;
 	window.currRatings = 0;
 	window.practiceClicks = [];
 	window.fullClicks = [];
-	window.currCondition = 0;
 	window.motivationRatings = [];
 	window.pracConfedRatings = [1,0,1,0,1,0];
 	window.confedRatings = [[1,5],[2,4],[3,3],[3,3],[4,2],[5,1]];
+	window.conditions = [0,1,2,0,1,2,0,1,2,0,1,2]; //THIS NEEDS TO BE FIXED/RANDOMIZED/MADE TO REACH 30; 0=reward, 1=ambig, 2=reject
+	window.currReward = 0;
+	window.currAmbig = 0;
+	window.currReject = 0;
 	 //randomize waiting time between 6 and 8 seconds
 	window.waitTimings = [Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000,
 						  Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000];
@@ -422,13 +425,223 @@ function Connecting() {
   	setTimeout(function() {
   		$('#ConnectedtoPeople').show();
   		$('#ConnectScreen').hide();
-  	}, window.connectTimings[window.currCondition]); //original should be set to 8000
-	
+  	}, 2000); //original should be set to 8000 - NEEDS TO BE CHANGED TO REFLECT 30 PTPS
+  		//Should replace this ^ with just randomizing on the spot
+		//was window.connectTimings[window.currConfed]
   	$('#cont_connect').on('click',function() {
 		$('#ConnectScreen').hide();
 		$('#ConnectedtoPeople').hide();
   		motivation_rating_pre();  			
   	});	
+}
+
+function motivation_rating_pre() {
+	$('#MotivationPre').show();
+}
+
+$('#Mot0').on('click',function() {
+	window.motivationRatings.push(0);
+	$('#MotivationPre').hide();
+	PreRating();
+})
+
+$('#Mot1').on('click',function() {
+	window.motivationRatings.push(1);
+	$('#MotivationPre').hide();
+	PreRating();
+})
+
+$('#Mot2').on('click',function() {
+	window.motivationRatings.push(2);
+	$('#MotivationPre').hide();
+	PreRating();
+})
+
+$('#Mot3').on('click',function() {
+	window.motivationRatings.push(3);
+	$('#MotivationPre').hide();
+	PreRating();
+})
+
+$('#Mot4').on('click',function() {
+	window.motivationRatings.push(4);
+	$('#MotivationPre').hide();
+	PreRating();
+})
+
+function PreRating() {
+	$('#pre_rating').show();
+	$('#cont_response').on('click',function(){
+		$('#pre_rating').hide();
+		Give_Ratings_tvmovie();
+	})
+}
+
+function Give_Ratings_tvmovie() {
+	$('#GiveRatingsTvMovie').show();
+	ShowRatingsTvMovie();
+}
+
+function ShowRatingsTvMovie() {
+	if (window.conditions[window.currConfed] === 0){
+		$('.usernamedemoratings').text(window.profiles.confeds_reward[window.currReward].username);
+		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reward[window.currReward].avatar+ ")");
+		$('.wkdanswerdemoratings').text(window.profiles.confeds_reward[window.currReward].response_movie);
+	} else if (window.conditions[window.currConfed] === 1){
+		$('.usernamedemoratings').text(window.profiles.confeds_ambig[window.currAmbig].username);
+		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_ambig[window.currAmbig].avatar+ ")");
+		$('.wkdanswerdemoratings').text(window.profiles.confeds_ambig[window.currAmbig].response_movie);
+	} else if (window.conditions[window.currConfed] === 2){
+		$('.usernamedemoratings').text(window.profiles.confeds_reject[window.currReject].username);
+		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reject[window.currReject].avatar+ ")");
+		$('.wkdanswerdemoratings').text(window.profiles.confeds_reject[window.currReject].response_movie);
+	}
+}
+
+$('#like_arrow_realtvratings').on('click',function () {
+	window.fullClicks.push(1);
+	$('#GiveRatingsTvMovie').hide();
+	Give_Ratings_food();
+})
+
+$('#dislike_arrow_realtvratings').on('click',function (){
+	window.fullClicks.push(0);
+	$('#GiveRatingsTvMovie').hide();
+	Give_Ratings_food();
+})
+
+function Give_Ratings_food() {
+	$('#GiveRatingsFood').show();
+	ShowRatingsFood();
+}
+
+function ShowRatingsFood() {
+	if (window.conditions[window.currConfed] === 0){
+		$('.usernamedemoratings').text(window.profiles.confeds_reward[window.currReward].username);
+		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reward[window.currReward].avatar+ ")");
+		$('.wkdanswerdemoratings').text(window.profiles.confeds_reward[window.currReward].response_food);
+	} else if (window.conditions[window.currConfed] === 1){
+		$('.usernamedemoratings').text(window.profiles.confeds_ambig[window.currAmbig].username);
+		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_ambig[window.currAmbig].avatar+ ")");
+		$('.wkdanswerdemoratings').text(window.profiles.confeds_ambig[window.currAmbig].response_food);
+	} else if (window.conditions[window.currConfed] === 2){
+		$('.usernamedemoratings').text(window.profiles.confeds_reject[window.currReject].username);
+		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reject[window.currReject].avatar+ ")");
+		$('.wkdanswerdemoratings').text(window.profiles.confeds_reject[window.currReject].response_food);
+	}
+}
+
+$('#like_arrow_realfoodratings').on('click',function () {
+	window.fullClicks.push(1);
+	$('#GiveRatingsFood').hide();
+	Waiting();
+})
+
+$('#dislike_arrow_realfoodratings').on('click',function (){
+	window.fullClicks.push(0);
+	$('#GiveRatingsFood').hide();
+	Waiting();
+})
+
+function Waiting() {
+	$('#WaitScreen').show();
+	
+  	setTimeout(function() {
+  		$('#WaitScreen').hide();
+  		connect_feedback();
+  	}, 2000); //return to window.waitTimings[window.currCondition] after testing
+}
+
+function connect_feedback() {
+	$('#Cont_Feedback').show();
+	$('#cont_fb').on('click',function() {
+		$('#Cont_Feedback').hide();
+		FeedbackTvMovie();
+	})
+}
+
+function FeedbackTvMovie() {
+	$('#Feedback_TvMovie').show();
+	ShowRatingsTvMovie();
+	if (window.conditions[window.currConfed]==0){
+		$('#TvConfedLikeArrow').show();
+	} else if (window.conditions[window.currConfed]==1){
+		//??? how to determine whether like or dislike?
+	} else if (window.conditions[window.currConfed]==2){
+		$('#TvConfedDislikeArrow').show();
+	}
+}
+
+$('#cont_tvRatings').on('click',function() {
+	$('#Feedback_TvMovie').hide();
+	$('#TvConfedLikeArrow').hide();
+	$('#TvConfedDislikeArrow').hide();
+	FeedbackFood();
+})
+
+function FeedbackFood() {
+	$('#Feedback_Food').show();
+	ShowRatingsFood();
+	if (window.conditions[window.currConfed]==0){
+		window.currReward++;
+		$('#FoodConfedLikeArrow').show();
+	} else if (window.conditions[window.currConfed]==1){
+		window.currAmbig++;
+		//??? how to determine whether like or dislike?
+	} else if (window.conditions[window.currConfed]==2){
+		window.currReject++;
+		$('#FoodConfedDislikeArrow').show();
+	}
+}
+
+$('#cont_foodRatings').on('click',function() {
+	$('#Feedback_Food').hide();
+	$('#FoodConfedLikeArrow').hide();
+	$('#FoodConfedDislikeArrow').hide();
+	motivation_rating_post();
+})
+
+function motivation_rating_post() {
+	$('#MotivationPost').show();
+}
+
+$('#Mot0_2').on('click',function() {
+	window.motivationRatings.push(0);
+	$('#MotivationPost').hide();
+	NextRound();
+})
+
+$('#Mot1_2').on('click',function() {
+	window.motivationRatings.push(1);
+	$('#MotivationPost').hide();
+	NextRound();
+})
+
+$('#Mot2_2').on('click',function() {
+	window.motivationRatings.push(2);
+	$('#MotivationPost').hide();
+	NextRound();
+})
+
+$('#Mot3_2').on('click',function() {
+	window.motivationRatings.push(3);
+	$('#MotivationPost').hide();
+	NextRound();
+})
+
+$('#Mot4_2').on('click',function() {
+	window.motivationRatings.push(4);
+	$('#MotivationPost').hide();
+	NextRound();
+})
+
+function NextRound() {
+	if (window.currConfed === window.totalConfeds-1) {
+		$('#Completed').show();
+	} else {
+		window.currConfed++;
+		Connecting();
+	}
 }
 
 set_settings();
@@ -437,6 +650,7 @@ set_settings();
 
 //enter_username();
 
-Pre_Connect_Instr();
+
+Connecting();
 
 });

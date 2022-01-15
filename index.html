@@ -265,16 +265,130 @@
 
 	<div id="ConnectScreen" style="display:none;" class="connect">
 		<h3 style="text-align:center;">Establishing connection</h3>
-  		<p style="text-align:center;">Please wait while you are being connected to the other participants in your group.</p><br><br>
+  		<p style="text-align:center;">Please wait while you are being connected to the next participant.</p><br><br>
   		<img class="load" src='ajax-loader.gif' id="loader" style="display:block; margin-left:auto; margin-right:auto; width:50px; height:12.5px">
   	</div>
 
-  	<div id="ConnectedtoPeople" style="display:none;" class="connect">
-  		<h1>You are now connected</h1>
-  		<p>You are now connected with the other participants on the internet.<br><br>
-  			<b>The following question will ask specifically about the person you are about to interact with.</b></p><br><br>
-  		<button type="submit" id="cont_connect">Continue</button>
+  <div id="ConnectedtoPeople" style="display:none;" class="connect">
+  	<h1>You are now connected</h1>
+  	<p>You are now connected with the other participants on the internet.<br><br>
+  		<b>The following question will ask specifically about the person you are about to interact with.</b></p><br><br>
+  	<button type="submit" id="cont_connect">Continue</button>
 	</div>
 	
+	<div id="MotivationPre" style="display:none;" class="instr">
+		<h3 style="text-align:center;">How much do you want to interact with this <strong>next person?</strong></h3>
+		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how you feel about this next interaction.</p>
+		<button type="submit" id="Mot0" style="position:relative;top:200px;left:100px">Not at all</button>
+		<button type="submit" id="Mot1" style="position:relative;top:200px;left:200px">Slightly</button>
+		<button type="submit" id="Mot2" style="position:relative;top:200px;left:300px">Neutral</button>
+		<button type="submit" id="Mot3" style="position:relative;top:200px;left:400px">Moderately</button>
+		<button type="submit" id="Mot4" style="position:relative;top:200px;left:500px">As much as possible</button>
+	</div>
+
+	<div id="pre_rating" style="display:none;" class="instr">
+		<h1>Click "Continue" to rate the next person's responses.</h1>
+		<button type="submit" id="cont_response">Continue</button>
+	</div>
+
+	<div id="GiveRatingsTvMovie" style="display:none;" class="instr">
+		<h3 class="pracQ">Describe your favorite movie or TV show. What is it about? Why do you like it?</h3>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="ViewMyUname"></div>
+				<div class="ViewMyPropic"></div>
+				<div class="MyAnswer"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+				<div class="like_arrow" id="like_arrow_realtvratings"></div>
+				<div class="dislike_arrow" id="dislike_arrow_realtvratings"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="GiveRatingsFood" style="display:none;" class="instr">
+		<h3 class="pracQ">Describe your favorite meal or type of food. Why do you like it?</h3>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="ViewMyUname"></div>
+				<div class="ViewMyPropic"></div>
+				<div class="MyAnswer"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+				<div class="like_arrow" id="like_arrow_realfoodratings"></div>
+				<div class="dislike_arrow" id="dislike_arrow_realfoodratings"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="WaitScreen" style="display:none;" class="instr">
+		<h3 style="text-align:center;">Waiting for the other participant to finish their ratings...</h3><br><br>
+  		<img class="load" src='ajax-loader.gif' id="waiting" style="display:block; margin-left:auto; margin-right:auto; width:50px; height:12.5px">
+	</div>
+
+	<div id="Cont_Feedback" style="display:none;" class="instr">
+		<h1>Click "Continue" to see how the other participant rated your responses.</h1>
+		<button type="submit" id="cont_fb">Continue</button>
+	</div>
+
+	<div id="Feedback_TvMovie" style="display:none;" class="instr">
+		<h3 class="pracQ">Describe your favorite movie or TV show. What is it about? Why do you like it?</h3>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="ViewMyUname"></div>
+				<div class="ViewMyPropic"></div>
+				<div class="MyAnswer"></div>
+				<div class="like_arrow" id="TvConfedLikeArrow" style="display:none;right:30px;"></div>
+				<div class="dislike_arrow" id="TvConfedDislikeArrow" style="display:none;right:30px;"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+			</div>
+			<button type="submit" id="cont_tvRatings" style="position: absolute;bottom: -200px;">Continue</button>
+		</div>
+	</div>
+
+	<div id="Feedback_Food" style="display:none;" class="instr">
+		<h3 class="pracQ">Describe your favorite meal or type of food. Why do you like it?</h3>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="ViewMyUname"></div>
+				<div class="ViewMyPropic"></div>
+				<div class="MyAnswer"></div>
+				<div class="like_arrow" id="FoodConfedLikeArrow" style="display:none;right:30px;"></div>
+				<div class="dislike_arrow" id="FoodConfedDislikeArrow" style="display:none;right:30px;"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+			</div>
+			<button type="submit" id="cont_foodRatings" style="position: absolute;bottom: -200px;">Continue</button>
+		</div>
+	</div>
+
+	<div id="MotivationPost" style="display:none;" class="instr">
+		<h3 style="text-align:center;">How much would you want to keep interacting with this <strong>same person?</strong></h3>
+		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how you feel about continuing to interact with them.</p>
+		<button type="submit" id="Mot0_2" style="position:relative;top:200px;left:100px">Not at all</button>
+		<button type="submit" id="Mot1_2" style="position:relative;top:200px;left:200px">Slightly</button>
+		<button type="submit" id="Mot2_2" style="position:relative;top:200px;left:300px">Neutral</button>
+		<button type="submit" id="Mot3_2" style="position:relative;top:200px;left:400px">Moderately</button>
+		<button type="submit" id="Mot4_2" style="position:relative;top:200px;left:500px">As much as possible</button>
+	</div>
+
+	<div id="Completed" style="display:none;" class="instr">
+		<h1 style="text-align:center;">You have now completed this task.</h1>
+		<p style="text-align:center;">Thank you for participating. You have now interacted with all of the other participants. You may close this window and continue with the remainder of the experiment.</p>
+	</div>
+
 </div>
 	

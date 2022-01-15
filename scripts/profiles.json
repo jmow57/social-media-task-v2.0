@@ -35,7 +35,7 @@ window.profiles = {
       }
     ],
 
-  "confeds_reward1" : [
+  "confeds_reward" : [
     {
       "avatar": "avatars/avatar_39.png",
       "username": "~Laura~",
@@ -71,10 +71,34 @@ window.profiles = {
       "username": "XxAlexxX",
       "response_food": "My favorite food is street tacos from Tacos el Gordo because it reminds me of home. Tacos el Gorgo is a place in Denver, Colorado that I went all the time with my brothers growing up.",
       "response_movie": "I think Chopped is my favorite show. I LOVE cooking shows because it gives me ideas for recipes, as well as entertainment from seeing what the chefs crearte annd if their creations go wrong.",
+    },
+    {
+      "avatar": "avatars/avatar_11.png",
+      "username": "David",
+      "response_food": "Mac n cheese for sure! It is so delicious and you can make so many kinds of it. My favorite kind is baked mac n cheese with the nice goldenn crust on it.",
+      "response_movie": "I think my favorite show is How I Met Your Mother. It is kind of like Friends with the same charm and nostalgia, but I think it has a more interesting plot line. If you're into romcom type shows go watch it."
+    },
+    {
+      "avatar": "avatars/avatar_22.png",
+      "username": "Bella<3",
+      "response_food": "I know people will make fun of me but my favorite food is actually salad. I'm a vegetarian so my go-to is almost always a nice salad. I really like kale and gorgonzola salad with some green apples.",
+      "response_movie": "My favorite show is Narcos because it ties in real life true stories in entertainment so I learn stuff. I've learned a lot so far and it's neat because I also get to practice Spanish along the way!"
+    },
+    {
+      "avatar": "avatars/avatar_1.png",
+      "username": "Trevor",
+      "response_food": "Shawrma is my staple. For people who don't know what shwarma is, it's a falafel, chicken, or steak sandwich with vegetables and tahini sauce. I grew up in Mediterranean culture so shwarma is present a lot.",
+      "response_movie": "Modern Family - it's an amazing comedy with muultidimensional characters who I feel like I've known for decades. The acting is amazing and the comedic timing is better than any other show out there."
+    },
+    {
+      "avatar": "avatars/avatar_46.png",
+      "username": "Ivan",
+      "response_food": "My favorite food is probably fried chicken. So yummyyyy. I enjoy the different textures and flavors that good fried chicken has. It reminds me of growing up where my parents would always get fried chicken.",
+      "response_movie": "Favorite movie is Hustlers! It is funny and has so many amazing actors in it, lots of talent to be seen. Constance Wu, Cardi B, J-Lo, and Lizzo are all in it! It shows a little bit of history about the recession of the U.S."
     }
   ],
 
-  "confeds_ambig1" : [
+  "confeds_ambig" : [
     {
       "avatar": "avatars/avatar_44.png",
       "username": "Nick",
@@ -110,33 +134,6 @@ window.profiles = {
       "username": "Lilly",
       "response_food": "Burritos, because you can put all different types of food, textures, and sauces together and then you get to eat it with your hands. I am a vegetarian so Chipotle is one of my favorite restaurants.",
       "response_movie": "Even though I'm an adult, I'm a huge fan of Disney classics, particularly from the 90s and early 2000s. Mulan still remains one of my favorite films. I love the storyline, the animation style, and of course the music."
-    }
-  ],
-
-  "confeds_ambig2" : [
-    {
-      "avatar": "avatars/avatar_11.png",
-      "username": "David",
-      "response_food": "Mac n cheese for sure! It is so delicious and you can make so many kinds of it. My favorite kind is baked mac n cheese with the nice goldenn crust on it.",
-      "response_movie": "I think my favorite show is How I Met Your Mother. It is kind of like Friends with the same charm and nostalgia, but I think it has a more interesting plot line. If you're into romcom type shows go watch it."
-    },
-    {
-      "avatar": "avatars/avatar_22.png",
-      "username": "Bella<3",
-      "response_food": "I know people will make fun of me but my favorite food is actually salad. I'm a vegetarian so my go-to is almost always a nice salad. I really like kale and gorgonzola salad with some green apples.",
-      "response_movie": "My favorite show is Narcos because it ties in real life true stories in entertainment so I learn stuff. I've learned a lot so far and it's neat because I also get to practice Spanish along the way!"
-    },
-    {
-      "avatar": "avatars/avatar_1.png",
-      "username": "Trevor",
-      "response_food": "Shawrma is my staple. For people who don't know what shwarma is, it's a falafel, chicken, or steak sandwich with vegetables and tahini sauce. I grew up in Mediterranean culture so shwarma is present a lot.",
-      "response_movie": "Modern Family - it's an amazing comedy with muultidimensional characters who I feel like I've known for decades. The acting is amazing and the comedic timing is better than any other show out there."
-    },
-    {
-      "avatar": "avatars/avatar_46.png",
-      "username": "Ivan",
-      "response_food": "My favorite food is probably fried chicken. So yummyyyy. I enjoy the different textures and flavors that good fried chicken has. It reminds me of growing up where my parents would always get fried chicken.",
-      "response_movie": "Favorite movie is Hustlers! It is funny and has so many amazing actors in it, lots of talent to be seen. Constance Wu, Cardi B, J-Lo, and Lizzo are all in it! It shows a little bit of history about the recession of the U.S."
     },
     {
       "avatar": "avatars/avatar_4.png",
@@ -149,10 +146,22 @@ window.profiles = {
       "username": "Thoma$",
       "response_food": "Plain and simple black beans. I grew up with a lot of Hispanic food since my family is from Colombia so beans are my favorite. I love simple black beans over rice dish with a little lime to spice things up.",
       "response_movie": "My favorite TV show is the Office because it is really entertaining. My aunt actually is one of the producers for the Office and my uncle was featured in a couple of the episodes, so I guess you could say I'm a little biased!"
+    },
+    {
+      "avatar": "avatars/avatar_47.png",
+      "username": "Joshua",
+      "response_food": "My favorite food is roasted lamb kebab. I like it because my mom only makes it on special occasionns so it's a treat yo have. I prefer it to be spiced with tumeric because I love the taste but any other hearty spice is so good too.",
+      "response_movie": "One of my favorite movies is Amelie because I like the whimsical and playful nature of both the movie and that character. Such a feel good movie."
+    },
+    {
+      "avatar": "avatars/avatar_2.png",
+      "username": "Brad",
+      "response_food": "I think tacos, just because I really love little bite sized foods. They're so fun to eat. I like how you can put whatever toppinngs in them. I prefer carne asada tacos but I will literally eat any kind.",
+      "response_movie": "I actually have been watching a lot of TikToks recently, which I KNOW isn't tv but they're just so funny that I end up wasting my whole day watching them instead."
     }
   ],
 
-  "confeds_reject1" : [
+  "confeds_reject" : [
     {
       "avatar": "avatars/avatar_13.png",
       "username": "Ky",
@@ -188,21 +197,6 @@ window.profiles = {
       "username": "Harrison",
       "response_food": "My favorite food is crispy, roasted brussel sprouts. I know a lot of people hate brussel sprouts but I actually find them quite delicious. Sprinkle a little cheese on them too and they are golden!",
       "response_movie": "Game of Thrones. I like this show not only for the show itself, but because I have watched every single episode with my spouse, even when we were dating long-distance."
-    }
-  ],
-
-  "confeds_reject2" : [
-    {
-      "avatar": "avatars/avatar_47.png",
-      "username": "Joshua",
-      "response_food": "My favorite food is roasted lamb kebab. I like it because my mom only makes it on special occasionns so it's a treat yo have. I prefer it to be spiced with tumeric because I love the taste but any other hearty spice is so good too.",
-      "response_movie": "One of my favorite movies is Amelie because I like the whimsical and playful nature of both the movie and that character. Such a feel good movie."
-    },
-    {
-      "avatar": "avatars/avatar_2.png",
-      "username": "Brad",
-      "response_food": "I think tacos, just because I really love little bite sized foods. They're so fun to eat. I like how you can put whatever toppinngs in them. I prefer carne asada tacos but I will literally eat any kind.",
-      "response_movie": "I actually have been watching a lot of TikToks recently, which I KNOW isn't tv but they're just so funny that I end up wasting my whole day watching them instead."
     },
     {
       "avatar": "avatars/avatar_38.png",
@@ -228,5 +222,4 @@ window.profiles = {
       "response_food": "Ice cream - I have a huge sweet tooth and I love the creamy texture. My favorite food is mint chocolate chip because you can't go wrong with it. Slap it on a sugar cone and you can win me over!! ;)",
       "response_movie": "The TV show New Girl. It's about a group of roommates in their 30's in LA who have fun together. In the show, two roommates (Nick and Jess) begin dating. It's really funny!"
     }
-  ],
-  };
+  ]};
