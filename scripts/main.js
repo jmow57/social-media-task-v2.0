@@ -24,9 +24,12 @@ function set_settings(){
 	window.practiceClicks = [];
 	window.fullClicks = [];
 	window.motivationRatings = [];
+	window.defeatistRatings = [];
 	window.pracConfedRatings = [1,0,1,0,1,0];
 	window.confedRatings = [[1,5],[2,4],[3,3],[3,3],[4,2],[5,1]];
-	window.conditions = [0,1,2,0,1,2,0,1,2,0,1,2]; //THIS NEEDS TO BE FIXED/RANDOMIZED/MADE TO REACH 30; 0=reward, 1=ambig, 2=reject
+	window.conditions = [0,0,2,1,2,0,2,0,1,1,2,1,0,1,0,2,0,1,1,2,2,1,2,0,1,0,2,0,1,2]; //pseudorandomized using excel
+	//[1,1,1,1,1,1,1,1,1,1,1];
+	//[0,1,2,0,1,2,0,1,2,0,1,2]; //THIS NEEDS TO BE FIXED/RANDOMIZED/MADE TO REACH 30; 0=reward, 1=ambig, 2=reject
 	window.currReward = 0;
 	window.currAmbig = 0;
 	window.currReject = 0;
@@ -36,8 +39,8 @@ function set_settings(){
 	 //randomize connecting time between 4 and 6 seconds
 	window.connectTimings = [Math.floor(Math.random()*6000)+4000,Math.floor(Math.random()*6000)+4000,Math.floor(Math.random()*6000)+4000,
 							 Math.floor(Math.random()*6000)+4000,Math.floor(Math.random()*6000)+4000];
-	window.postRewardAnswers = [];
-	window.postRejectAnswers = [];
+	window.needThreatAnswers = [];
+	window.firstAmbResp = 999;
 
 	//COMMENT BELOW LINES OUT FOR TESTING OUTSIDE PAVLOVIA
 	// window.finishExperimentAndSave = undefined;
@@ -234,7 +237,7 @@ function ShowRatingsProfilesPractice(){
 }
 
 function ContinueRatings(){
-	if (window.currConfed >= window.settings.profilespercondition-1) {
+	if (window.currConfed >= 5) {
 		$('#RatingsPractice').hide();
 		window.currConfed = 0;
 		//jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
@@ -554,11 +557,12 @@ function Waiting() {
 
 function connect_feedback() {
 	$('#Cont_Feedback').show();
-	$('#cont_fb').on('click',function() {
-		$('#Cont_Feedback').hide();
-		FeedbackTvMovie();
-	})
 }
+
+$('#cont_fb').on('click',function() {
+	$('#Cont_Feedback').hide();
+	FeedbackTvMovie();
+})
 
 function FeedbackTvMovie() {
 	$('#Feedback_TvMovie').show();
@@ -566,7 +570,12 @@ function FeedbackTvMovie() {
 	if (window.conditions[window.currConfed]==0){
 		$('#TvConfedLikeArrow').show();
 	} else if (window.conditions[window.currConfed]==1){
-		//??? how to determine whether like or dislike?
+		window.firstAmbResp = Math.round(Math.random()); //randomizes 0 or 1
+		if (window.firstAmbResp==1){ //1 = like
+			$('#TvConfedLikeArrow').show();
+		} else if (window.firstAmbResp==0){ //0 = dislike
+			$('#TvConfedDislikeArrow').show();
+		}
 	} else if (window.conditions[window.currConfed]==2){
 		$('#TvConfedDislikeArrow').show();
 	}
@@ -586,8 +595,12 @@ function FeedbackFood() {
 		window.currReward++;
 		$('#FoodConfedLikeArrow').show();
 	} else if (window.conditions[window.currConfed]==1){
+		if (window.firstAmbResp==0){
+			$('#FoodConfedLikeArrow').show();
+		} else if (window.firstAmbResp==1){
+			$('#FoodConfedDislikeArrow').show();
+		}
 		window.currAmbig++;
-		//??? how to determine whether like or dislike?
 	} else if (window.conditions[window.currConfed]==2){
 		window.currReject++;
 		$('#FoodConfedDislikeArrow').show();
@@ -608,41 +621,152 @@ function motivation_rating_post() {
 $('#Mot0_2').on('click',function() {
 	window.motivationRatings.push(0);
 	$('#MotivationPost').hide();
-	NextRound();
+	defeatist_rating_post();
 })
 
 $('#Mot1_2').on('click',function() {
 	window.motivationRatings.push(1);
 	$('#MotivationPost').hide();
-	NextRound();
+	defeatist_rating_post();
 })
 
 $('#Mot2_2').on('click',function() {
 	window.motivationRatings.push(2);
 	$('#MotivationPost').hide();
-	NextRound();
+	defeatist_rating_post();
 })
 
 $('#Mot3_2').on('click',function() {
 	window.motivationRatings.push(3);
 	$('#MotivationPost').hide();
-	NextRound();
+	defeatist_rating_post();
 })
 
 $('#Mot4_2').on('click',function() {
 	window.motivationRatings.push(4);
 	$('#MotivationPost').hide();
+	defeatist_rating_post();
+})
+
+function defeatist_rating_post() {
+	$('#DefeatistPost').show();
+}
+
+$('#Def0').on('click',function() {
+	window.defeatistRatings.push(0);
+	$('#DefeatistPost').hide();
+	NextRound();
+})
+
+$('#Def1').on('click',function() {
+	window.defeatistRatings.push(1);
+	$('#DefeatistPost').hide();
+	NextRound();
+})
+
+$('#Def2').on('click',function() {
+	window.defeatistRatings.push(2);
+	$('#DefeatistPost').hide();
+	NextRound();
+})
+
+$('#Def3').on('click',function() {
+	window.defeatistRatings.push(3);
+	$('#DefeatistPost').hide();
+	NextRound();
+})
+
+$('#Def4').on('click',function() {
+	window.defeatistRatings.push(4);
+	$('#DefeatistPost').hide();
 	NextRound();
 })
 
 function NextRound() {
-	if (window.currConfed === window.totalConfeds-1) {
-		$('#Completed').show();
+	if (window.currConfed === 14 || window.currConfed === window.totalConfeds-1) {
+		NeedThreat();
 	} else {
 		window.currConfed++;
+		window.firstAmbResp = 999;
 		Connecting();
 	}
 }
+
+function NeedThreat() {
+	$('#NeedThreatQs').show();
+	QuestionNum = 0;
+	$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
+}
+
+$('#NT0').on('click',function() {
+	window.needThreatAnswers.push(0);
+	$('#NeedThreatQs').hide();	
+	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		Connecting();
+	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
+		$('#Completed').show();
+	} else {
+		QuestionNum++;
+		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
+		$('#NeedThreatQs').show();
+	}
+})
+
+$('#NT1').on('click',function() {
+	window.needThreatAnswers.push(1);
+	$('#NeedThreatQs').hide();
+	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		Connecting();
+	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
+		$('#Completed').show();
+	} else {
+		QuestionNum++;
+		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
+		$('#NeedThreatQs').show();
+	}
+})
+
+$('#NT2').on('click',function() {
+	window.needThreatAnswers.push(2);
+	$('#NeedThreatQs').hide();
+	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		Connecting();
+	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
+		$('#Completed').show();
+	} else {
+		QuestionNum++;
+		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
+		$('#NeedThreatQs').show();
+	}
+})
+
+$('#NT3').on('click',function() {
+	window.needThreatAnswers.push(3);
+	$('#NeedThreatQs').hide();
+	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		Connecting();
+	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
+		$('#Completed').show();
+	} else {
+		QuestionNum++;
+		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
+		$('#NeedThreatQs').show();
+	}
+})
+
+$('#NT4').on('click',function() {
+	window.needThreatAnswers.push(4);
+	$('#NeedThreatQs').hide();
+	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		Connecting();
+	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
+		$('#Completed').show();
+	} else {
+		QuestionNum++;
+		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
+		$('#NeedThreatQs').show();
+	}
+})
 
 set_settings();
 
