@@ -486,6 +486,9 @@ function Give_Ratings_tvmovie() {
 }
 
 function ShowRatingsTvMovie() {
+	$('.ViewMyUname').text(window.username);
+	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatar + ".png')");
+	$('.MyAnswer').text(window.tvmovie);
 	if (window.conditions[window.currConfed] === 0){
 		$('.usernamedemoratings').text(window.profiles.confeds_reward[window.currReward].username);
 		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reward[window.currReward].avatar+ ")");
@@ -519,6 +522,9 @@ function Give_Ratings_food() {
 }
 
 function ShowRatingsFood() {
+	$('.ViewMyUname').text(window.username);
+	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatar + ".png')");
+	$('.MyAnswer').text(window.food);
 	if (window.conditions[window.currConfed] === 0){
 		$('.usernamedemoratings').text(window.profiles.confeds_reward[window.currReward].username);
 		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reward[window.currReward].avatar+ ")");
@@ -770,11 +776,11 @@ $('#NT4').on('click',function() {
 
 set_settings();
 
-//intro_init();
+intro_init();
 
 //enter_username();
 
 
-Connecting();
+//Connecting();
 
 });
