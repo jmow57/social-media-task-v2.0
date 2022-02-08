@@ -251,10 +251,10 @@ function ContinueRatings(){
 function FeedbackPrac(){
 	$('#FeedbackPractice').show();
 	if (window.pracConfedRatings[window.currConfed]==1){
-		$('.like_arrow').show();
+		$('#pracConfedLikeArrow').show();
 	}
 	if (window.pracConfedRatings[window.currConfed]==0){
-		$('.dislike_arrow').show();
+		$('#pracConfedDislikeArrow').show();
 	}
 }
 
@@ -708,6 +708,7 @@ $('#NT0').on('click',function() {
 	window.needThreatAnswers.push(0);
 	$('#NeedThreatQs').hide();	
 	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
 		$('#Completed').show();
@@ -722,6 +723,7 @@ $('#NT1').on('click',function() {
 	window.needThreatAnswers.push(1);
 	$('#NeedThreatQs').hide();
 	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
 		$('#Completed').show();
@@ -736,6 +738,7 @@ $('#NT2').on('click',function() {
 	window.needThreatAnswers.push(2);
 	$('#NeedThreatQs').hide();
 	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
 		$('#Completed').show();
@@ -750,6 +753,7 @@ $('#NT3').on('click',function() {
 	window.needThreatAnswers.push(3);
 	$('#NeedThreatQs').hide();
 	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
 		$('#Completed').show();
@@ -764,6 +768,7 @@ $('#NT4').on('click',function() {
 	window.needThreatAnswers.push(4);
 	$('#NeedThreatQs').hide();
 	if(QuestionNum >= 23 && window.currConfed != window.totalConfeds-1) {
+		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
 		$('#Completed').show();
