@@ -428,7 +428,7 @@ function Connecting() {
   	setTimeout(function() {
   		$('#ConnectedtoPeople').show();
   		$('#ConnectScreen').hide();
-  	}, 2000); //original should be set to 8000 - NEEDS TO BE CHANGED TO REFLECT 30 PTPS
+  	}, 1000); //original should be set to 8000 - NEEDS TO BE CHANGED TO REFLECT 30 PTPS - ALSO WAS ORIGINALLY 1 SECOND
   		//Should replace this ^ with just randomizing on the spot
 		//was window.connectTimings[window.currConfed]
   	$('#cont_connect').on('click',function() {
