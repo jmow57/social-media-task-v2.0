@@ -140,14 +140,14 @@
 		<h1>Ratings: Practice</h1>
 		<p>After you have rated a participant's response, you will then be able to see how they rated your response (whether they liked or disliked your response).
 			<br><br>
-			In this example, this person has <strong>LIKED</strong> your response. You can tell because there is a green <strong>LIKE</strong> arrow in your box.
-			<br><br>
 			Continue to the next page for a demonstration. As a reminder, you are currently interacting with <strong>computer generated</strong> profiles as practice for the real task later.
 		<div class="BoxSetup">
 			<div class="WhiteBoxLeft">
 				<div class="propic"></div>
 				<div class="uname_example">My Username</div>
 				<div class="like_arrow" style="right: 30px"></div>
+				<div class="likeline"></div>
+				<div class="explainlike" id="introlike" style="left:-200px;width:200px">In this example, this person has <strong>LIKED</strong> your response. You can tell because there is a green <strong>LIKE</strong> arrow in your box.</div>
 			</div>
 			<div class="WhiteBoxRight">
 				<div class="propic"></div>
@@ -184,6 +184,9 @@
 				<div class="MyAnswer"></div>
 				<div class="like_arrow" id="pracConfedLikeArrow" style="display:none;right:30px;"></div>
 				<div class="dislike_arrow" id="pracConfedDislikeArrow" style="display:none;right:30px;"></div>
+				<div class="explainlike" id="likeexplained">This green arrow means that this person <strong>LIKED</strong> your post.</div>
+				<div class="explainlike" id="dislikeexplained" style="left:-160px;width:180px;">This red arrow means that this person <strong>DISLIKED</strong> your post.</div>
+				<div class="likeline"></div>
 			</div>
 			<div class="WhiteBoxRight">
 				<div class="usernamedemoratings"></div>
@@ -256,9 +259,9 @@
 
 	<div id="PreConnectInstr" style="display:none;" class="instr">
 		<h1>You are about to connect with other participants</h1>
-		<p>You are about to be connected with a group of participants where you will rate others' the same way you did in the practice session.
+		<p>You are about to be connected with a group of participants where you will rate others' responses the same way you did in the practice session.
 			<br><br>
-			You will rate every person's responses, and every person will rate yours. You will also be prompted to fill out a questionnaire a couple of times during the ratings.
+			You will rate every person's responses, and every person will rate yours. You will also be prompted to fill out a questionnaire halfway through the ratings.
 			<br><br></p>
 		<button type="submit" id="cont_preconnect">Connect to Chatroom</button>
 	</div>
@@ -393,6 +396,18 @@
 		<button type="submit" id="Def2" style="position:relative;top:200px;left:300px">Neutral</button>
 		<button type="submit" id="Def3" style="position:relative;top:200px;left:400px">Moderately well</button>
 		<button type="submit" id="Def4" style="position:relative;top:200px;left:500px">As good as possible</button>
+	</div>
+
+	<div id ="Halfway" style="display:none;" class="instr">
+		<h3>You are halfway through the task.</h3>
+		<p>You have interacted with half of the participants in this study. Before you continue, please answer the following questions about how you feel <strong>right now.</strong></p>
+		<button type="submit" id="cont_half">Continue</button>
+	</div>
+
+	<div id ="AlmostDone" style="display:none;" class="instr">
+		<h3>You are almost done with the task.</h3>
+		<p>You are done interacting with the participants in this study. Before you complete the task, please answer the following questions about how you feel <strong>right now.</strong></p>
+		<button type="submit" id="cont_almost">Continue</button>
 	</div>
 
 	<div id="NeedThreatQs" style="display:none;" class="instr">

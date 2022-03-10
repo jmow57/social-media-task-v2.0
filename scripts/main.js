@@ -214,8 +214,10 @@ function Rating_Demo(){
 
 function Results_Demo(){
 	$('#ResultsDemo').show();
+	$('#introlike').show();
 	$('#cont_resDemo').on('click',function(){
 		$('#ResultsDemo').hide();
+		$('#introlike').hide();
 		Ratings_Practice();
 	})
 }
@@ -250,18 +252,24 @@ function ContinueRatings(){
 
 function FeedbackPrac(){
 	$('#FeedbackPractice').show();
+	$('#likeline').show();
 	if (window.pracConfedRatings[window.currConfed]==1){
 		$('#pracConfedLikeArrow').show();
+		$('#likeexplained').show();
 	}
 	if (window.pracConfedRatings[window.currConfed]==0){
 		$('#pracConfedDislikeArrow').show();
+		$('#dislikeexplained').show();
 	}
 }
 
 $('#cont_pracRatings').on('click',function() {
 	$('#FeedbackPractice').hide();
 	$('#pracConfedLikeArrow').hide();
+	$('#likeexplained').hide();
 	$('#pracConfedDislikeArrow').hide();
+	$('#dislikeexplained').hide();
+	$('#likeline').hide();
 	ContinueRatings();
 })
 
@@ -428,9 +436,7 @@ function Connecting() {
   	setTimeout(function() {
   		$('#ConnectedtoPeople').show();
   		$('#ConnectScreen').hide();
-  	}, 1000); //original should be set to 8000 - NEEDS TO BE CHANGED TO REFLECT 30 PTPS - ALSO WAS ORIGINALLY 1 SECOND
-  		//Should replace this ^ with just randomizing on the spot
-		//was window.connectTimings[window.currConfed]
+  	}, Math.floor(Math.random()*1500)+700); //between 0.7 seconds and 1.5 seconds
   	$('#cont_connect').on('click',function() {
 		$('#ConnectScreen').hide();
 		$('#ConnectedtoPeople').hide();
@@ -558,7 +564,7 @@ function Waiting() {
   	setTimeout(function() {
   		$('#WaitScreen').hide();
   		connect_feedback();
-  	}, 2000); //return to window.waitTimings[window.currCondition] after testing
+  	}, Math.floor(Math.random()*3000)+1500); //between 1.5 and 3 seconds
 }
 
 function connect_feedback() {
@@ -690,12 +696,29 @@ $('#Def4').on('click',function() {
 
 function NextRound() {
 	if (window.currConfed === 14 || window.currConfed === window.totalConfeds-1) {
-		NeedThreat();
+		NTintro();
 	} else {
 		window.currConfed++;
 		window.firstAmbResp = 999;
 		Connecting();
 	}
+}
+
+function NTintro(){
+	if (window.currConfed === 14) {
+		$('#Halfway').show();
+		$('#cont_half').on('click',function(){
+			$('#Halfway').hide();
+			NeedThreat();
+		})
+	} else if (window.currConfed === window.totalConfeds-1) {
+		$('#AlmostDone').show();
+		$('#cont_almost').on('click',function(){
+			$('#AlmostDone').hide();
+			NeedThreat();
+		})
+	}
+
 }
 
 function NeedThreat() {
@@ -781,7 +804,9 @@ $('#NT4').on('click',function() {
 
 set_settings();
 
-intro_init();
+//intro_init();
+
+Pre_Connect_Instr();
 
 //enter_username();
 
