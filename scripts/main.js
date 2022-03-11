@@ -25,7 +25,7 @@ function set_settings(){
 	window.fullClicks = [];
 	window.motivationRatings = [];
 	window.defeatistRatings = [];
-	window.pracConfedRatings = [1,0,1,0,1,0];
+	window.pracConfedRatings = [1,0];
 	window.confedRatings = [[1,5],[2,4],[3,3],[3,3],[4,2],[5,1]];
 	window.conditions = [0,0,2,1,2,0,2,0,1,1,2,1,0,1,0,2,0,1,1,2,2,1,2,0,1,0,2,0,1,2]; //pseudorandomized using excel
 	//[1,1,1,1,1,1,1,1,1,1,1];
@@ -188,6 +188,37 @@ function Answer_Prac(){
   			$('#AnswerPrac').hide();
   			window.weekend = $('#Weekend').val();
   			jsPsych.data.get().push(['PracticeResponse',window.weekend]);
+    		Answer_Prac2();  			
+    	} else {
+    		alertify.log(errormsg,"error");
+    	}
+  	});  
+}
+
+function Answer_Prac2(){
+	$('#AnswerPrac2').show();
+	$('#FreeTime').keyup(function(){
+		$('#count_ft').text("Characters left: " + (215-$(this).val().length))
+	});
+
+	$('#cont_ansPrac2').on('click',function() {
+  		var error = 0;
+  		if($('#FreeTime').val() == "") {
+  			error = 1;
+  			errormsg = 'Please enter text.';
+  		}
+  		if($('#FreeTime').val() !== "" && $('#FreeTime').val().length < 100) {
+  			error = 1;
+  			errormsg = 'Please write a bit more.';
+			}
+  		if($('#FreeTime').val().length > 215) {
+  			error = 1;
+  			errormsg = 'You are over the text limit.';
+  		}  		
+  		if(error == 0) {
+  			$('#AnswerPrac2').hide();
+  			window.freetime = $('#FreeTime').val();
+  			jsPsych.data.get().push(['PracticeResponse2',window.freetime]);
     		Rating_Instr();  			
     	} else {
     		alertify.log(errormsg,"error");
@@ -232,14 +263,28 @@ function Ratings_Practice(){
 	//During this second (feedback) screen, might be helpful to add text explaining what the feedback means?
 }
 
+function Ratings_Practice2(){
+	$('#RatingsPractice2').show();
+	$('.ViewMyUname').text(window.usernamePrac);
+	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatarPrac + ".png')");
+	$('.MyAnswer').text(window.freetime);
+	ShowRatingsProfilesPractice2();
+}
+
 function ShowRatingsProfilesPractice(){
 	$('.usernamedemoratings').text(window.profiles.confeds_prac[window.currConfed].username);
 	$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_prac[window.currConfed].avatar+ ")");
 	$('.wkdanswerdemoratings').text(window.profiles.confeds_prac[window.currConfed].response_wkd);
 }
 
+function ShowRatingsProfilesPractice2(){
+	$('.usernamedemoratings').text(window.profiles.confeds_prac[window.currConfed].username);
+	$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_prac[window.currConfed].avatar+ ")");
+	$('.wkdanswerdemoratings').text(window.profiles.confeds_prac[window.currConfed].response_ft);
+}
+
 function ContinueRatings(){
-	if (window.currConfed >= 5) {
+	if (window.currConfed >= 1) {
 		$('#RatingsPractice').hide();
 		window.currConfed = 0;
 		//jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
@@ -263,12 +308,35 @@ function FeedbackPrac(){
 	}
 }
 
+function FeedbackPrac2(){
+	$('#FeedbackPractice2').show();
+	$('#likeline').show();
+	if (window.pracConfedRatings[window.currConfed]==1){
+		$('#pracConfedLikeArrow2').show();
+		$('#likeexplained2').show();
+	}
+	if (window.pracConfedRatings[window.currConfed]==0){
+		$('#pracConfedDislikeArrow2').show();
+		$('#dislikeexplained2').show();
+	}
+}
+
 $('#cont_pracRatings').on('click',function() {
 	$('#FeedbackPractice').hide();
 	$('#pracConfedLikeArrow').hide();
 	$('#likeexplained').hide();
 	$('#pracConfedDislikeArrow').hide();
 	$('#dislikeexplained').hide();
+	$('#likeline').hide();
+	Ratings_Practice2();
+})
+
+$('#cont_pracRatings2').on('click',function() {
+	$('#FeedbackPractice2').hide();
+	$('#pracConfedLikeArrow2').hide();
+	$('#likeexplained2').hide();
+	$('#pracConfedDislikeArrow2').hide();
+	$('#dislikeexplained2').hide();
 	$('#likeline').hide();
 	ContinueRatings();
 })
@@ -283,6 +351,18 @@ $('#dislike_arrow_demoratings').on('click',function (){
 	window.practiceClicks[window.currConfed] = 0;
 	$('#RatingsPractice').hide();
 	FeedbackPrac();
+})
+
+$('#like_arrow_demoratings2').on('click',function () {
+	window.practiceClicks[window.currConfed] = 1;
+	$('#RatingsPractice2').hide();
+	FeedbackPrac2();
+})
+
+$('#dislike_arrow_demoratings2').on('click',function (){
+	window.practiceClicks[window.currConfed] = 0;
+	$('#RatingsPractice2').hide();
+	FeedbackPrac2();
 })
 
 function Prac_complete_instr(){
@@ -806,7 +886,7 @@ set_settings();
 
 //intro_init();
 
-Pre_Connect_Instr();
+enter_username_practice();
 
 //enter_username();
 

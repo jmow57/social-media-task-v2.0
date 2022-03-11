@@ -101,6 +101,15 @@
 		<button type="submit" id="cont_ansPrac">Continue</button>
 	</div>
 
+		<div id="AnswerPrac2" style="display:none;" class="instr">
+		<h3>Question & Answer</h3>
+		<p>What do you like to do in your free time? <br><br>
+		Click "Continue" when you are finished.</p>
+		<textarea id="FreeTime" autocomplete="off"/></textarea><br>
+		<span id="count_ft">Characters left: 215</span><br><br>
+		<button type="submit" id="cont_ansPrac2">Continue</button>
+	</div>
+
 	<div id="RatingInstr" style="display:none;" class="instr">
 		<h1>Ratings: Practice</h1>
 		<p>After you connect with other participants, you will read each of their responses to the question that you just answered. They will also be able to read the response that you just wrote.
@@ -175,6 +184,24 @@
 		</div>
 	</div>
 
+		<div id="RatingsPractice2" style="display:none;" class="instr">
+		<h3 class="pracQ">What do you like to do in your free time?</h3>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="ViewMyUname"></div>
+				<div class="ViewMyPropic"></div>
+				<div class="MyAnswer"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+				<div class="like_arrow" id="like_arrow_demoratings2"></div>
+				<div class="dislike_arrow" id="dislike_arrow_demoratings2"></div>
+			</div>
+		</div>
+	</div>
+
 	<div id="FeedbackPractice" style="display:none;" class="instr">
 		<h3 class="pracQ">What did you do last weekend?</h3>
 		<div class="BoxSetup">
@@ -194,6 +221,28 @@
 				<div class="wkdanswerdemoratings"></div>
 			</div>
 			<button type="submit" id="cont_pracRatings" style="position: absolute;bottom: -200px;">Continue</button>
+		</div>
+	</div>
+
+		<div id="FeedbackPractice2" style="display:none;" class="instr">
+		<h3 class="pracQ">What do you like to do in your free time?</h3>
+		<div class="BoxSetup">
+			<div class="WhiteBoxLeft">
+				<div class="ViewMyUname"></div>
+				<div class="ViewMyPropic"></div>
+				<div class="MyAnswer"></div>
+				<div class="like_arrow" id="pracConfedLikeArrow2" style="display:none;right:30px;"></div>
+				<div class="dislike_arrow" id="pracConfedDislikeArrow2" style="display:none;right:30px;"></div>
+				<div class="explainlike" id="likeexplained2">This green arrow means that this person <strong>LIKED</strong> your post.</div>
+				<div class="explainlike" id="dislikeexplained2" style="left:-160px;width:180px;">This red arrow means that this person <strong>DISLIKED</strong> your post.</div>
+				<div class="likeline"></div>
+			</div>
+			<div class="WhiteBoxRight">
+				<div class="usernamedemoratings"></div>
+				<div class="propicdemoratings"></div>
+				<div class="wkdanswerdemoratings"></div>
+			</div>
+			<button type="submit" id="cont_pracRatings2" style="position: absolute;bottom: -200px;">Continue</button>
 		</div>
 	</div>
 

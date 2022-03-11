@@ -6,12 +6,14 @@ window.profiles = {
       { //Practice round, profile 1
         "avatar": "avatars/avatar_42.png",
         "username": "Person 1",
-        "response_wkd": "Last weekend, I went to see a movie with my girlfriend. It was funny but she fell asleep during it."
+        "response_wkd": "Last weekend, I went to see a movie with my girlfriend. It was funny but she fell asleep during it.",
+        "response_ft": "I spend most of my free time exercising and exploring the city. I love trying to find new places to explore around my house."
       },
       {
         "avatar": "avatars/avatar_41.png",
         "username": "Person 2",
-        "response_wkd": "My family and I grabbed lunch on Commonwealth Avenue at a Thai place. I got pad thai which tasted great. I recommend it."
+        "response_wkd": "My family and I grabbed lunch on Commonwealth Avenue at a Thai place. I got pad thai which tasted great. I recommend it.",
+        "response_ft": "In the summer, I like to go to the beach in my free time. I live close to the beach so it's very easy and relaxing. In the winter I mostly watch movies."
       },
       {
         "avatar": "avatars/avatar_35.png",
