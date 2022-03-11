@@ -1028,7 +1028,7 @@ set_settings();
 
 //intro_init();
 
-enter_username_practice();
+PracPostMot();
 
 //enter_username();
 

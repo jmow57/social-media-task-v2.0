@@ -565,6 +565,12 @@ p.viewInst {
 
 /* Formatting for motivation ratings */
 
+.MotivationSetup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 #mainHorizLine {
   position: relative;
   width: 700px;
