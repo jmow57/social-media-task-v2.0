@@ -24,7 +24,9 @@ function set_settings(){
 	window.practiceClicks = [];
 	window.fullClicks = [];
 	window.motivationRatings = [];
+	window.pracmotivationRatings = [];
 	window.defeatistRatings = [];
+	window.PracdefeatistRatings = [];
 	window.pracConfedRatings = [1,0];
 	window.confedRatings = [[1,5],[2,4],[3,3],[3,3],[4,2],[5,1]];
 	window.conditions = [0,0,2,1,2,0,2,0,1,1,2,1,0,1,0,2,0,1,1,2,2,1,2,0,1,0,2,0,1,2]; //pseudorandomized using excel
@@ -219,19 +221,77 @@ function Answer_Prac2(){
   			$('#AnswerPrac2').hide();
   			window.freetime = $('#FreeTime').val();
   			jsPsych.data.get().push(['PracticeResponse2',window.freetime]);
-    		Rating_Instr();  			
+    		Motivation_Instr();  			
     	} else {
     		alertify.log(errormsg,"error");
     	}
   	});  
 }
 
-function Rating_Instr(){
-	$('#RatingInstr').show();
-	$('#cont_ratInst').on('click',function(){
-		$('#RatingInstr').hide();
-		Rating_Demo();
+function Motivation_Instr(){
+	$('#MotInstr').show();
+	$('#cont_motinstr').on('click',function(){
+		$('#MotInstr').hide();
+		PracPreMot();
 	})
+}
+
+function Motivation_Instr2(){
+	$('#MotInstr2').show();
+	$('#cont_motinstr2').on('click',function(){
+		$('#MotInstr2').hide();
+		PracPreMot();
+	})
+}
+
+function PracPreMot(){
+	$('#PracMotivationPre').show();
+}
+
+$('#PracMot0').on('click',function() {
+	window.pracmotivationRatings.push(0);
+	$('#PracMotivationPre').hide();
+	Rating_Instr();
+})
+
+$('#PracMot1').on('click',function() {
+	window.pracmotivationRatings.push(1);
+	$('#PracMotivationPre').hide();
+	Rating_Instr();
+})
+
+$('#PracMot2').on('click',function() {
+	window.pracmotivationRatings.push(2);
+	$('#PracMotivationPre').hide();
+	Rating_Instr();
+})
+
+$('#PracMot3').on('click',function() {
+	window.pracmotivationRatings.push(3);
+	$('#PracMotivationPre').hide();
+	Rating_Instr();
+})
+
+$('#PracMot4').on('click',function() {
+	window.pracmotivationRatings.push(4);
+	$('#PracMotivationPre').hide();
+	Rating_Instr();
+})
+
+function Rating_Instr(){
+	if (window.currConfed==0) {
+		$('#RatingInstr').show();
+		$('#cont_ratInst').on('click',function(){
+			$('#RatingInstr').hide();
+			Rating_Demo();
+		})
+	} else {
+		$('#Pracpre_rating').show();
+		$('#cont_responsePrac').on('click',function(){
+			$('#Pracpre_rating').hide();
+			Ratings_Practice();
+		})
+	}
 }
 
 function Rating_Demo(){
@@ -291,7 +351,7 @@ function ContinueRatings(){
 		Prac_complete_instr();
 	} else {
 		window.currConfed++; //this is working in round 2
-		Ratings_Practice();
+		Motivation_Instr2();
 	}
 }
 
@@ -338,7 +398,11 @@ $('#cont_pracRatings2').on('click',function() {
 	$('#pracConfedDislikeArrow2').hide();
 	$('#dislikeexplained2').hide();
 	$('#likeline').hide();
-	ContinueRatings();
+	if (window.currConfed == 0){
+		PostMot_Instr();
+	} else {
+		PracPostMot();
+	}
 })
 
 $('#like_arrow_demoratings').on('click',function () {
@@ -364,6 +428,84 @@ $('#dislike_arrow_demoratings2').on('click',function (){
 	$('#RatingsPractice2').hide();
 	FeedbackPrac2();
 })
+
+function PostMot_Instr(){
+	$('#PostMotInstr').show();
+	$('#cont_postmotinstr').on('click',function (){
+		$('#PostMotInstr').hide();
+		PracPostMot();
+	})
+
+}
+
+function PracPostMot(){
+	$('#PracMotivationPost').show();
+}
+
+$('#PracMot0_2').on('click',function() {
+	window.motivationRatings.push(0);
+	$('#PracMotivationPost').hide();
+	PracPostDefeatist();
+})
+
+$('#PracMot1_2').on('click',function() {
+	window.motivationRatings.push(1);
+	$('#PracMotivationPost').hide();
+	PracPostDefeatist();
+})
+
+$('#PracMot2_2').on('click',function() {
+	window.motivationRatings.push(2);
+	$('#PracMotivationPost').hide();
+	PracPostDefeatist();
+})
+
+$('#PracMot3_2').on('click',function() {
+	window.motivationRatings.push(3);
+	$('#PracMotivationPost').hide();
+	PracPostDefeatist();
+})
+
+$('#PracMot4_2').on('click',function() {
+	window.motivationRatings.push(4);
+	$('#PracMotivationPost').hide();
+	PracPostDefeatist();
+})
+
+function PracPostDefeatist(){
+	$('#PracDefeatistPost').show();
+}
+
+$('#PracDef0').on('click',function() {
+	window.PracdefeatistRatings.push(0);
+	$('#PracDefeatistPost').hide();
+	ContinueRatings();
+})
+
+$('#PracDef1').on('click',function() {
+	window.PracdefeatistRatings.push(1);
+	$('#PracDefeatistPost').hide();
+	ContinueRatings();
+})
+
+$('#PracDef2').on('click',function() {
+	window.PracdefeatistRatings.push(2);
+	$('#PracDefeatistPost').hide();
+	ContinueRatings();
+})
+
+$('#PracDef3').on('click',function() {
+	window.PracdefeatistRatings.push(3);
+	$('#PracDefeatistPost').hide();
+	ContinueRatings();
+})
+
+$('#PracDef4').on('click',function() {
+	window.PracdefeatistRatings.push(4);
+	$('#PracDefeatistPost').hide();
+	ContinueRatings();
+})
+
 
 function Prac_complete_instr(){
 	$('#PracContinueInstr').show();
