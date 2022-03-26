@@ -1,20 +1,22 @@
 
-/* General styles for header text */
+/* General styles for header text and continue buttons */
 h1 {
   font-family: 'Helvetica',Helvetica,sans-serif;
-  text-align: left;
+  text-align: center;
   text-justify: inter-word;
   margin: 1em;
-  margin-left: 4%;
+  margin-left: 15%;
+  margin-right: 15%;
   color: #000000;
 }
 
 h3 {
   font-family: 'Helvetica',Helvetica,sans-serif;
-  text-align: left;
+  text-align: center;
   text-justify: inter-word;
   margin: 2em;
-  margin-left: 4%;
+  margin-left: 15%;
+  margin-right: 15%;
   color: #000000;
 }
 
@@ -22,10 +24,11 @@ h3 {
 p {
   font-family: 'Helvetica',Helvetica,sans-serif;
   font-size: 18px;
-  text-align: left;
+  text-align: center;
   text-justify: inter-word;
   margin: 1em;
-  margin-left: 4%;
+  margin-left: 15%;
+  margin-right: 15%;
   color: #000000;
   line-height: 2;
 }
@@ -41,11 +44,13 @@ img {
 
 /* How the buttons/textboxes should look across pages */
 button {
-  margin-left: 4%;
+  position: relative;
+  left: 47%;
 }
 
 input {
-  margin-left: 4%;
+  position: relative;
+  left: 41.5%;
 }
 
 /* Avatar styles */
@@ -74,14 +79,16 @@ img.avatar.selected {
 
 /* Textbox styles for the larger input boxes */
 textarea {
+  position: relative;
   width: 500px;
   height: 100px;
   max-height: 100px;
-  margin-left: 4%;
+  left: 32%;
 }
 
 span {
-  margin-left: 4%;
+  position: relative;
+  left: 32%;
 }
 
 /* Styles for the demo "ratings" page within the practice portion */

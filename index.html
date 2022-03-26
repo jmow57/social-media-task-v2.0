@@ -45,7 +45,7 @@
 
     <div id="intro1" style="display:none;" class="instr"> <!-- NO CHANGES -->
 		<h1>Welcome to this study</h1>
-		<p>We are interested in learning about how people form social connections online. In this study you will meet and interact with other participants online by answering questions about yourself and things you like to do.<br><br></p>
+		<p>We are interested in learning about how people form social connections online. In this activity you will meet and interact with other participants online by answering questions about yourself and things you like to do.<br><br></p>
 		<script src="scripts/main.js"></script>
 		<!--Continue button image: -->
 		<button type="submit" id="continue">Continue</button>
@@ -62,7 +62,7 @@
     
 	<div id="introPrac" style="display:none;" class="instr"> <!-- NO CHANGES -->
 		<h1>Practice</h1>
-		<p>Before you begin the actual task, you will go through a practice trial to get an idea of what you will be doing in this task. During this practice round, you will be interacting with <strong>computer generated</strong> profiles, not real participants.
+		<p>Before you begin the actual activity, you will go through a practice trial to get an idea of what you will be doing in this activity. During this practice round, you will be interacting with <strong>computer generated</strong> profiles, not real participants.
 			<br><br>
 			You will start by entering a username and choosing a profile picture to represent you. <br><br></p>
 			<button type="submit" id="continue3">Continue</button>
@@ -127,14 +127,14 @@
 
 	<div id="PracMotivationPre" style="display:none;" class="instr">
 		<h3 style="text-align:center;">How much do you want to interact with this <strong>next person?</strong></h3>
-		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how you feel about this next interaction.</p>
 		<div class="MotivationSetup">
-			<button type="submit" id="PracMot0" style="position:absolute;top:170px;left:28%">Not at all</button>
-			<button type="submit" id="PracMot1" style="position:absolute;top:170px;left:35.5%">Slightly</button>
-			<button type="submit" id="PracMot2" style="position:absolute;top:170px;left:42%">Neutral</button>
-			<button type="submit" id="PracMot3" style="position:absolute;top:170px;left:48%">Moderately</button>
-			<button type="submit" id="PracMot4" style="position:absolute;top:170px;left:56%">As much as possible</button>
+			<button type="submit" id="PracMot0" style="position:absolute;top:30px;left:30%">Not at all</button>
+			<button type="submit" id="PracMot1" style="position:absolute;top:30px;left:37.5%">Slightly</button>
+			<button type="submit" id="PracMot2" style="position:absolute;top:30px;left:44%">Neutral</button>
+			<button type="submit" id="PracMot3" style="position:absolute;top:30px;left:50%">Moderately</button>
+			<button type="submit" id="PracMot4" style="position:absolute;top:30px;left:58%">As much as possible</button>
 		</div>
+		<p style="text-align:center;"><br><br><br><br>Click on the button that <strong>best</strong> describes how you feel about this next interaction.</p>
 	</div>
 
 	<div id="Pracpre_rating" style="display:none;" class="instr">
@@ -157,7 +157,13 @@
 	<p>You will read each participant's response one by one, as shown below. The other participants will also be reading and responding to your profile.
 		<br><br>
 		You can respond to posts by either clicking the like button <i class="like_arrow_demo"></i> if you like a post, or the dislike button <i class="dislike_arrow_demo"></i> if you do not like a post. See below for an example. Click "continue" to see what happens next.
-		<br><br>
+		<br><br></p>
+		<button type="submit" id="cont_ratDemo">Continue</button>
+	</div>
+
+	<div id="RatingDemoPix" style="display:none;" class="instr">
+		<h1>Ratings: Practice</h1>
+		<p>Here is an example of how to respond to posts. Click "continue" to see what happens next.<br><br></p>
 		<div class="BoxSetup">
 			<div class="WhiteBoxLeft">
 				<div class="propic"></div>
@@ -173,15 +179,20 @@
 				<div class="clicktolike">Click this button if you LIKE a post</div>
 				<div class="clicktodislike">Click this button if you DO NOT like a post</div>
 			</div>
-			<button type="submit" id="cont_ratDemo" style="position: absolute;bottom: -200px;">Continue</button>
+			<button type="submit" id="cont_ratDemopix" style="top: 450px;">Continue</button>
 		</div>
 	</div>
 
 	<div id="ResultsDemo" style="display:none;" class="instr">
 		<h1>Ratings: Practice</h1>
 		<p>After you have rated a participant's response, you will then be able to see how they rated your response (whether they liked or disliked your response).
-			<br><br>
-			Continue to the next page for a demonstration. As a reminder, you are currently interacting with <strong>computer generated</strong> profiles as practice for the real task later.
+			<br><br></p>
+			<button type="submit" id="cont_resDemo" style="top: 100px;">Continue</button>
+	</div>
+
+	<div id="ResultsDemoPix" style="display:none;" class="instr">
+		<h1>Ratings: Practice</h1>
+		<p>Here is an example of how someone might rate your response. Continue to the next page for a demonstration. As a reminder, you are currently interacting with <strong>computer generated</strong> profiles as practice for the real activity later.</p>
 		<div class="BoxSetup">
 			<div class="WhiteBoxLeft">
 				<div class="propic"></div>
@@ -194,7 +205,7 @@
 				<div class="propic"></div>
 				<div class="uname_example">Other's Username</div>
 			</div>
-			<button type="submit" id="cont_resDemo" style="position: absolute;bottom: -200px;">Continue</button>
+			<button type="submit" id="cont_resDemopix" style="top: 450px;">Continue</button>
 		</div>
 	</div>
 
@@ -252,7 +263,7 @@
 				<div class="propicdemoratings"></div>
 				<div class="wkdanswerdemoratings"></div>
 			</div>
-			<button type="submit" id="cont_pracRatings" style="position: absolute;bottom: -200px;">Continue</button>
+			<button type="submit" id="cont_pracRatings" style="top:450px;">Continue</button>
 		</div>
 	</div>
 
@@ -274,45 +285,45 @@
 				<div class="propicdemoratings"></div>
 				<div class="wkdanswerdemoratings"></div>
 			</div>
-			<button type="submit" id="cont_pracRatings2" style="position: absolute;bottom: -200px;">Continue</button>
+			<button type="submit" id="cont_pracRatings2" style="top:450px">Continue</button>
 		</div>
 	</div>
 
 	<div id="PostMotInstr" style="display:none;" class="instr">
 		<h1>Post-interaction Ratings</h1>
-		<p>After interacting with each participant, you will answer two more questions. First, imagine you are given the opportunity to continue interacting with this same person. How much would you want to keep interacting with them? You will rate your response from "not at all" to "as much as possible."<br><br>
-			Then, think about the interaction you just had with this person. Do you think it went well? You will rate your response from "not well at all" to "as good as possible."<br><br>
+		<p>After interacting with each participant, you will answer two more questions. First, think about the interaction you just had with this person. Do you think it went well? You will rate your response from "not well at all" to "as good as possible."<br><br>
+			Then, imagine you are given the opportunity to continue interacting with this same person. How much would you want to keep interacting with them? You will rate your response from "not at all" to "as much as possible."<br><br>
 		Click "Continue" to practice doing this.</p>
 		<button type="submit" id="cont_postmotinstr">Continue</button>
 	</div>
 
 	<div id="PracMotivationPost" style="display:none;" class="instr">
-		<h3 style="text-align:center;">How much would you want to keep interacting with this <strong>same person?</strong></h3>
-		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how you feel about continuing to interact with them.</p>
+		<h3 style="text-align:center;">How much would you like to keep interacting with this <strong>same person?</strong></h3>
 		<div class="MotivationSetup">
-			<button type="submit" id="PracMot0_2" style="position:absolute;top:170px;left:28%">Not at all</button>
-			<button type="submit" id="PracMot1_2" style="position:absolute;top:170px;left:35.5%">Slightly</button>
-			<button type="submit" id="PracMot2_2" style="position:absolute;top:170px;left:42%">Neutral</button>
-			<button type="submit" id="PracMot3_2" style="position:absolute;top:170px;left:48%">Moderately</button>
-			<button type="submit" id="PracMot4_2" style="position:absolute;top:170px;left:56%">As much as possible</button>
+			<button type="submit" id="PracMot0_2" style="position:absolute;top:30px;left:30%">Not at all</button>
+			<button type="submit" id="PracMot1_2" style="position:absolute;top:30px;left:37.5%">Slightly</button>
+			<button type="submit" id="PracMot2_2" style="position:absolute;top:30px;left:44%">Neutral</button>
+			<button type="submit" id="PracMot3_2" style="position:absolute;top:30px;left:50%">Moderately</button>
+			<button type="submit" id="PracMot4_2" style="position:absolute;top:30px;left:58%">As much as possible</button>
 		</div>
+		<p style="text-align:center;"><br><br><br><br>Click on the button that <strong>best</strong> describes how you feel about continuing to interact with them.</p>
 	</div>
 
 	<div id="PracDefeatistPost" style="display:none;" class="instr">
 		<h3 style="text-align:center;">How well did you think that interaction with that person went?</h3> <!-- we should change this wording -->
-		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how well you think the interaction went.</p>
 		<div class="MotivationSetup">
-			<button type="submit" id="PracDef0" style="position:absolute;top:170px;left:24%">Not well at all</button>
-			<button type="submit" id="PracDef1" style="position:absolute;top:170px;left:33%">Slightly good</button>
-			<button type="submit" id="PracDef2" style="position:absolute;top:170px;left:42%">Neutral</button>
-			<button type="submit" id="PracDef3" style="position:absolute;top:170px;left:48%">Moderately well</button>
-			<button type="submit" id="PracDef4" style="position:absolute;top:170px;left:58%">As good as possible</button>
+			<button type="submit" id="PracDef0" style="position:absolute;top:30px;left:26%">Not well at all</button>
+			<button type="submit" id="PracDef1" style="position:absolute;top:30px;left:35%">Slightly good</button>
+			<button type="submit" id="PracDef2" style="position:absolute;top:30px;left:44%">Neutral</button>
+			<button type="submit" id="PracDef3" style="position:absolute;top:30px;left:50%">Moderately well</button>
+			<button type="submit" id="PracDef4" style="position:absolute;top:30px;left:60%">As good as possible</button>
 		</div>
+		<p style="text-align:center;"><br><br><br><br>Click on the button that <strong>best</strong> describes how well you think the interaction went.</p>
 	</div>
 
 	<div id="PracContinueInstr" style="display:none;" class="instr">
 		<h1>You have now completed the practice round</h1>
-		<p>Now that you know what to do, you will soon be connected to real participants, and complete the actual task.
+		<p>Now that you know what to do, you will soon be connected to real participants, and complete the actual activity.
 			<br><br>
 			As a reminder, the only information you will have about other participants is what they choose to share with you. Similarly, the only information they will have about you is what you choose to share with them.</p>
 		<button type="submit" id="cont_praccontinstr">Continue</button>
@@ -394,12 +405,14 @@
 	
 	<div id="MotivationPre" style="display:none;" class="instr">
 		<h3 style="text-align:center;">How much do you want to interact with this <strong>next person?</strong></h3>
-		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how you feel about this next interaction.</p>
-		<button type="submit" id="Mot0" style="position:relative;top:200px;left:100px">Not at all</button>
-		<button type="submit" id="Mot1" style="position:relative;top:200px;left:200px">Slightly</button>
-		<button type="submit" id="Mot2" style="position:relative;top:200px;left:300px">Neutral</button>
-		<button type="submit" id="Mot3" style="position:relative;top:200px;left:400px">Moderately</button>
-		<button type="submit" id="Mot4" style="position:relative;top:200px;left:500px">As much as possible</button>
+		<div class="MotivationSetup">
+			<button type="submit" id="Mot0" style="position:absolute;top:30px;left:30%">Not at all</button>
+			<button type="submit" id="Mot1" style="position:absolute;top:30px;left:37.5%">Slightly</button>
+			<button type="submit" id="Mot2" style="position:absolute;top:30px;left:44%">Neutral</button>
+			<button type="submit" id="Mot3" style="position:absolute;top:30px;left:50%">Moderately</button>
+			<button type="submit" id="Mot4" style="position:absolute;top:30px;left:58%">As much as possible</button>
+		</div>
+		<p style="text-align:center;"><br><br><br><br>Click on the button that <strong>best</strong> describes how you feel about this next interaction.</p>
 	</div>
 
 	<div id="pre_rating" style="display:none;" class="instr">
@@ -492,34 +505,38 @@
 	</div>
 
 	<div id="MotivationPost" style="display:none;" class="instr">
-		<h3 style="text-align:center;">How much would you want to keep interacting with this <strong>same person?</strong></h3>
-		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how you feel about continuing to interact with them.</p>
-		<button type="submit" id="Mot0_2" style="position:relative;top:200px;left:100px">Not at all</button>
-		<button type="submit" id="Mot1_2" style="position:relative;top:200px;left:200px">Slightly</button>
-		<button type="submit" id="Mot2_2" style="position:relative;top:200px;left:300px">Neutral</button>
-		<button type="submit" id="Mot3_2" style="position:relative;top:200px;left:400px">Moderately</button>
-		<button type="submit" id="Mot4_2" style="position:relative;top:200px;left:500px">As much as possible</button>
+		<h3 style="text-align:center;">How much would you like to keep interacting with this <strong>same person?</strong></h3>
+		<div class="MotivationSetup">
+			<button type="submit" id="Mot0_2" style="position:absolute;top:30px;left:30%">Not at all</button>
+			<button type="submit" id="Mot1_2" style="position:absolute;top:30px;left:37.5%">Slightly</button>
+			<button type="submit" id="Mot2_2" style="position:absolute;top:30px;left:44%">Neutral</button>
+			<button type="submit" id="Mot3_2" style="position:absolute;top:30px;left:50%">Moderately</button>
+			<button type="submit" id="Mot4_2" style="position:absolute;top:30px;left:58%">As much as possible</button>
+		</div>
+		<p style="text-align:center;"><br><br><br><br>Click on the button that <strong>best</strong> describes how you feel about continuing to interact with them.</p>
 	</div>
 
 	<div id="DefeatistPost" style="display:none;" class="instr">
 		<h3 style="text-align:center;">How well did you think that interaction with that person went?</h3> <!-- we should change this wording -->
-		<p style="text-align:center;">Click on the button that <strong>best</strong> describes how well you think the interaction went.</p>
-		<button type="submit" id="Def0" style="position:relative;top:200px;left:100px">Not well at all</button>
-		<button type="submit" id="Def1" style="position:relative;top:200px;left:200px">Slightly good</button>
-		<button type="submit" id="Def2" style="position:relative;top:200px;left:300px">Neutral</button>
-		<button type="submit" id="Def3" style="position:relative;top:200px;left:400px">Moderately well</button>
-		<button type="submit" id="Def4" style="position:relative;top:200px;left:500px">As good as possible</button>
+		<div class="MotivationSetup">
+			<button type="submit" id="Def0" style="position:absolute;top:30px;left:26%">Not well at all</button>
+			<button type="submit" id="Def1" style="position:absolute;top:30px;left:35%">Slightly good</button>
+			<button type="submit" id="Def2" style="position:absolute;top:30px;left:44%">Neutral</button>
+			<button type="submit" id="Def3" style="position:absolute;top:30px;left:50%">Moderately well</button>
+			<button type="submit" id="Def4" style="position:absolute;top:30px;left:60%">As good as possible</button>
+		</div>
+		<p style="text-align:center;"><br><br><br><br>Click on the button that <strong>best</strong> describes how well you think the interaction went.</p>
 	</div>
 
 	<div id ="Halfway" style="display:none;" class="instr">
-		<h3>You are halfway through the task.</h3>
+		<h3>You are halfway through the activity.</h3>
 		<p>You have interacted with half of the participants in this study. Before you continue, please answer the following questions about how you feel <strong>right now.</strong></p>
 		<button type="submit" id="cont_half">Continue</button>
 	</div>
 
 	<div id ="AlmostDone" style="display:none;" class="instr">
-		<h3>You are almost done with the task.</h3>
-		<p>You are done interacting with the participants in this study. Before you complete the task, please answer the following questions about how you feel <strong>right now.</strong></p>
+		<h3>You are almost done with the activity.</h3>
+		<p>You are done interacting with the participants in this study. Before you complete the activity, please answer the following questions about how you feel <strong>right now.</strong></p>
 		<button type="submit" id="cont_almost">Continue</button>
 	</div>
 
@@ -527,17 +544,17 @@
 		<p style="text-align:center; font-size:24px">Before you continue, please answer the following questions. 
 			<br><br> For each question, please choose the number that best represents how you feel <b>in this moment.</b></p>
 		<div id='NTQ' style="text-align:center; font-size:24px; font-weight:bold;"></div>
-		<button type="submit" id="NT0" style="position:relative;top:200px;left:100px">Not at all</button>
-		<button type="submit" id="NT1" style="position:relative;top:200px;left:200px">Slightly</button>
-		<button type="submit" id="NT2" style="position:relative;top:200px;left:300px">Neutral</button>
-		<button type="submit" id="NT3" style="position:relative;top:200px;left:400px">Moderately</button>
-		<button type="submit" id="NT4" style="position:relative;top:200px;left:500px">Extremely</button>
+		<button type="submit" id="NT0" style="position:relative;top:100px;left:27%">Not at all</button>
+		<button type="submit" id="NT1" style="position:relative;top:100px;left:32%">Slightly</button>
+		<button type="submit" id="NT2" style="position:relative;top:100px;left:38%">Neutral</button>
+		<button type="submit" id="NT3" style="position:relative;top:100px;left:43%">Moderately</button>
+		<button type="submit" id="NT4" style="position:relative;top:100px;left:48%">Extremely</button>
 	</div>
 
 
 	<div id="Completed" style="display:none;" class="instr">
-		<h1 style="text-align:center;">You have now completed this task.</h1>
-		<p style="text-align:center;">Thank you for participating. You have now interacted with all of the other participants. You may close this window and continue with the remainder of the experiment.</p>
+		<h1 style="text-align:center;">You have now completed this activity.</h1>
+		<p style="text-align:center;">Thank you for participating. You have now interacted with all of the other participants. You may close this window and continue with the remainder of the study.</p>
 	</div>
 
 </div>

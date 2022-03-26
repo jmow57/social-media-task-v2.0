@@ -298,16 +298,31 @@ function Rating_Demo(){
 	$('#RatingDemo').show();
 	$('#cont_ratDemo').on('click',function(){
 		$('#RatingDemo').hide();
+		Rating_Demo_Pictures();
+	})
+}
+
+function Rating_Demo_Pictures(){
+	$('#RatingDemoPix').show();
+	$('#cont_ratDemopix').on('click',function(){
+		$('#RatingDemoPix').hide();
 		Results_Demo();
 	})
 }
 
-
 function Results_Demo(){
 	$('#ResultsDemo').show();
-	$('#introlike').show();
 	$('#cont_resDemo').on('click',function(){
 		$('#ResultsDemo').hide();
+		Results_Demo_Pictures();
+	})
+}
+
+function Results_Demo_Pictures(){
+	$('#ResultsDemoPix').show();
+	$('#introlike').show();
+	$('#cont_resDemopix').on('click',function(){
+		$('#ResultsDemoPix').hide();
 		$('#introlike').hide();
 		Ratings_Practice();
 	})
@@ -401,7 +416,7 @@ $('#cont_pracRatings2').on('click',function() {
 	if (window.currConfed == 0){
 		PostMot_Instr();
 	} else {
-		PracPostMot();
+		PracPostDefeatist();
 	}
 })
 
@@ -433,7 +448,7 @@ function PostMot_Instr(){
 	$('#PostMotInstr').show();
 	$('#cont_postmotinstr').on('click',function (){
 		$('#PostMotInstr').hide();
-		PracPostMot();
+		PracPostDefeatist();
 	})
 
 }
@@ -445,31 +460,31 @@ function PracPostMot(){
 $('#PracMot0_2').on('click',function() {
 	window.motivationRatings.push(0);
 	$('#PracMotivationPost').hide();
-	PracPostDefeatist();
+	ContinueRatings();
 })
 
 $('#PracMot1_2').on('click',function() {
 	window.motivationRatings.push(1);
 	$('#PracMotivationPost').hide();
-	PracPostDefeatist();
+	ContinueRatings();
 })
 
 $('#PracMot2_2').on('click',function() {
 	window.motivationRatings.push(2);
 	$('#PracMotivationPost').hide();
-	PracPostDefeatist();
+	ContinueRatings();
 })
 
 $('#PracMot3_2').on('click',function() {
 	window.motivationRatings.push(3);
 	$('#PracMotivationPost').hide();
-	PracPostDefeatist();
+	ContinueRatings();
 })
 
 $('#PracMot4_2').on('click',function() {
 	window.motivationRatings.push(4);
 	$('#PracMotivationPost').hide();
-	PracPostDefeatist();
+	ContinueRatings();
 })
 
 function PracPostDefeatist(){
@@ -479,31 +494,31 @@ function PracPostDefeatist(){
 $('#PracDef0').on('click',function() {
 	window.PracdefeatistRatings.push(0);
 	$('#PracDefeatistPost').hide();
-	ContinueRatings();
+	PracPostMot();
 })
 
 $('#PracDef1').on('click',function() {
 	window.PracdefeatistRatings.push(1);
 	$('#PracDefeatistPost').hide();
-	ContinueRatings();
+	PracPostMot();
 })
 
 $('#PracDef2').on('click',function() {
 	window.PracdefeatistRatings.push(2);
 	$('#PracDefeatistPost').hide();
-	ContinueRatings();
+	PracPostMot();
 })
 
 $('#PracDef3').on('click',function() {
 	window.PracdefeatistRatings.push(3);
 	$('#PracDefeatistPost').hide();
-	ContinueRatings();
+	PracPostMot();
 })
 
 $('#PracDef4').on('click',function() {
 	window.PracdefeatistRatings.push(4);
 	$('#PracDefeatistPost').hide();
-	ContinueRatings();
+	PracPostMot();
 })
 
 
@@ -658,7 +673,7 @@ function Connecting() {
   	setTimeout(function() {
   		$('#ConnectedtoPeople').show();
   		$('#ConnectScreen').hide();
-  	}, Math.floor(Math.random()*1500)+700); //between 0.7 seconds and 1.5 seconds
+  	}, Math.floor(Math.random()*3000)+1500); //between 1.5 seconds and 3 seconds
   	$('#cont_connect').on('click',function() {
 		$('#ConnectScreen').hide();
 		$('#ConnectedtoPeople').hide();
@@ -845,7 +860,7 @@ $('#cont_foodRatings').on('click',function() {
 	$('#Feedback_Food').hide();
 	$('#FoodConfedLikeArrow').hide();
 	$('#FoodConfedDislikeArrow').hide();
-	motivation_rating_post();
+	defeatist_rating_post();
 })
 
 function motivation_rating_post() {
@@ -855,31 +870,31 @@ function motivation_rating_post() {
 $('#Mot0_2').on('click',function() {
 	window.motivationRatings.push(0);
 	$('#MotivationPost').hide();
-	defeatist_rating_post();
+	NextRound();
 })
 
 $('#Mot1_2').on('click',function() {
 	window.motivationRatings.push(1);
 	$('#MotivationPost').hide();
-	defeatist_rating_post();
+	NextRound();
 })
 
 $('#Mot2_2').on('click',function() {
 	window.motivationRatings.push(2);
 	$('#MotivationPost').hide();
-	defeatist_rating_post();
+	NextRound();
 })
 
 $('#Mot3_2').on('click',function() {
 	window.motivationRatings.push(3);
 	$('#MotivationPost').hide();
-	defeatist_rating_post();
+	NextRound();
 })
 
 $('#Mot4_2').on('click',function() {
 	window.motivationRatings.push(4);
 	$('#MotivationPost').hide();
-	defeatist_rating_post();
+	NextRound();
 })
 
 function defeatist_rating_post() {
@@ -889,31 +904,31 @@ function defeatist_rating_post() {
 $('#Def0').on('click',function() {
 	window.defeatistRatings.push(0);
 	$('#DefeatistPost').hide();
-	NextRound();
+	motivation_rating_post();
 })
 
 $('#Def1').on('click',function() {
 	window.defeatistRatings.push(1);
 	$('#DefeatistPost').hide();
-	NextRound();
+	motivation_rating_post();
 })
 
 $('#Def2').on('click',function() {
 	window.defeatistRatings.push(2);
 	$('#DefeatistPost').hide();
-	NextRound();
+	motivation_rating_post();
 })
 
 $('#Def3').on('click',function() {
 	window.defeatistRatings.push(3);
 	$('#DefeatistPost').hide();
-	NextRound();
+	motivation_rating_post();
 })
 
 $('#Def4').on('click',function() {
 	window.defeatistRatings.push(4);
 	$('#DefeatistPost').hide();
-	NextRound();
+	motivation_rating_post();
 })
 
 function NextRound() {
@@ -1027,12 +1042,11 @@ $('#NT4').on('click',function() {
 set_settings();
 
 //intro_init();
+//enter_username_practice();
+PracPreMot();
 
-PracPostMot();
 
 //enter_username();
 
-
-//Connecting();
 
 });
