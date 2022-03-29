@@ -99,6 +99,8 @@
 		<textarea id="Weekend" autocomplete="off"/></textarea><br>
 		<span id="count_wkd">Characters left: 215</span><br><br>
 		<button type="submit" id="cont_ansPrac">Continue</button>
+		<p><br><strong>Here is an example response:</strong><br></p>
+		<p style="margin-left:30%;margin-right:30%">Last weekend, I went for a walk with a friend. It was very nice outside, so we wanted to take advantage of the weather.</p>
 	</div>
 
 	<div id="AnswerPrac2" style="display:none;" class="instr">
@@ -165,11 +167,7 @@
 		<h1>Ratings: Practice</h1>
 		<p>Here is an example of how to respond to posts. Click "continue" to see what happens next.<br><br></p>
 		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
-				<div class="propic"></div>
-				<div class="uname_example">My Username</div>
-			</div>
-			<div class="WhiteBoxRight">
+			<div class="WhiteBoxCenter">
 				<div class="propic"></div>
 				<div class="uname_example">Other's Username</div>
 				<div class="like_arrow"></div>
@@ -194,16 +192,12 @@
 		<h1>Ratings: Practice</h1>
 		<p>Here is an example of how someone might rate your response. Continue to the next page for a demonstration. As a reminder, you are currently interacting with <strong>computer generated</strong> profiles as practice for the real activity later.</p>
 		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
+			<div class="WhiteBoxCenter">
 				<div class="propic"></div>
 				<div class="uname_example">My Username</div>
 				<div class="like_arrow" style="right: 30px"></div>
 				<div class="likeline"></div>
 				<div class="explainlike" id="introlike" style="left:-200px;width:200px">In this example, this person has <strong>LIKED</strong> your response. You can tell because there is a green <strong>LIKE</strong> arrow in your box.</div>
-			</div>
-			<div class="WhiteBoxRight">
-				<div class="propic"></div>
-				<div class="uname_example">Other's Username</div>
 			</div>
 			<button type="submit" id="cont_resDemopix" style="top: 450px;">Continue</button>
 		</div>
@@ -212,12 +206,7 @@
 	<div id="RatingsPractice" style="display:none;" class="instr">
 		<h3 class="pracQ">What did you do last weekend?</h3>
 		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
-			</div>
-			<div class="WhiteBoxRight">
+			<div class="WhiteBoxCenter">
 				<div class="usernamedemoratings"></div>
 				<div class="propicdemoratings"></div>
 				<div class="wkdanswerdemoratings"></div>
@@ -230,12 +219,7 @@
 		<div id="RatingsPractice2" style="display:none;" class="instr">
 		<h3 class="pracQ">What do you like to do in your free time?</h3>
 		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
-			</div>
-			<div class="WhiteBoxRight">
+			<div class="WhiteBoxCenter">
 				<div class="usernamedemoratings"></div>
 				<div class="propicdemoratings"></div>
 				<div class="wkdanswerdemoratings"></div>
@@ -245,47 +229,32 @@
 		</div>
 	</div>
 
+	<div id="Cont_FeedbackPrac" style="display:none;" class="instr">
+		<h1>Click "Continue" to see how the other participant rated your responses.</h1>
+		<button type="submit" id="cont_fbprac">Continue</button>
+	</div>
+
 	<div id="FeedbackPractice" style="display:none;" class="instr">
 		<h3 class="pracQ">What did you do last weekend?</h3>
 		<div class="BoxSetup">
 			<div class="WhiteBoxLeft">
 				<div class="ViewMyUname"></div>
 				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
+				<div class="MyAnswer" id="leftanswerprac"></div>
 				<div class="like_arrow" id="pracConfedLikeArrow" style="display:none;right:30px;"></div>
 				<div class="dislike_arrow" id="pracConfedDislikeArrow" style="display:none;right:30px;"></div>
-				<div class="explainlike" id="likeexplained">This green arrow means that this person <strong>LIKED</strong> your post.</div>
-				<div class="explainlike" id="dislikeexplained" style="left:-160px;width:180px;">This red arrow means that this person <strong>DISLIKED</strong> your post.</div>
+				<div class="explainlike" id="likeexplained" style="left:-160px;width:170px;">These green arrows mean that this person <strong>LIKED</strong> your posts.</div>
+				<div class="explainlike" id="dislikeexplained" style="left:-160px;width:180px;">These red arrows mean that this person <strong>DISLIKED</strong> your posts.</div>
 				<div class="likeline"></div>
 			</div>
 			<div class="WhiteBoxRight">
-				<div class="usernamedemoratings"></div>
-				<div class="propicdemoratings"></div>
-				<div class="wkdanswerdemoratings"></div>
-			</div>
-			<button type="submit" id="cont_pracRatings" style="top:450px;">Continue</button>
-		</div>
-	</div>
-
-		<div id="FeedbackPractice2" style="display:none;" class="instr">
-		<h3 class="pracQ">What do you like to do in your free time?</h3>
-		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
 				<div class="ViewMyUname"></div>
 				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
+				<div class="MyAnswer" id="rightanswerprac"></div>
 				<div class="like_arrow" id="pracConfedLikeArrow2" style="display:none;right:30px;"></div>
 				<div class="dislike_arrow" id="pracConfedDislikeArrow2" style="display:none;right:30px;"></div>
-				<div class="explainlike" id="likeexplained2">This green arrow means that this person <strong>LIKED</strong> your post.</div>
-				<div class="explainlike" id="dislikeexplained2" style="left:-160px;width:180px;">This red arrow means that this person <strong>DISLIKED</strong> your post.</div>
-				<div class="likeline"></div>
 			</div>
-			<div class="WhiteBoxRight">
-				<div class="usernamedemoratings"></div>
-				<div class="propicdemoratings"></div>
-				<div class="wkdanswerdemoratings"></div>
-			</div>
-			<button type="submit" id="cont_pracRatings2" style="top:450px">Continue</button>
+			<button type="submit" id="cont_pracRatings" style="top:450px;">Continue</button>
 		</div>
 	</div>
 
@@ -387,7 +356,7 @@
 			<br><br>
 			You will rate every person's responses, and every person will rate yours. You will also be prompted to fill out a questionnaire halfway through the ratings.
 			<br><br></p>
-		<button type="submit" id="cont_preconnect">Connect to Chatroom</button>
+		<button type="submit" id="cont_preconnect" style="left:44%">Connect to Chatroom</button>
 	</div>
 
 	<div id="ConnectScreen" style="display:none;" class="connect">
@@ -423,12 +392,7 @@
 	<div id="GiveRatingsTvMovie" style="display:none;" class="instr">
 		<h3 class="pracQ">Describe your favorite movie or TV show. What is it about? Why do you like it?</h3>
 		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
-			</div>
-			<div class="WhiteBoxRight">
+			<div class="WhiteBoxCenter">
 				<div class="usernamedemoratings"></div>
 				<div class="propicdemoratings"></div>
 				<div class="wkdanswerdemoratings"></div>
@@ -441,12 +405,7 @@
 	<div id="GiveRatingsFood" style="display:none;" class="instr">
 		<h3 class="pracQ">Describe your favorite meal or type of food. Why do you like it?</h3>
 		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
-				<div class="ViewMyUname"></div>
-				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
-			</div>
-			<div class="WhiteBoxRight">
+			<div class="WhiteBoxCenter">
 				<div class="usernamedemoratings"></div>
 				<div class="propicdemoratings"></div>
 				<div class="wkdanswerdemoratings"></div>
@@ -466,42 +425,28 @@
 		<button type="submit" id="cont_fb">Continue</button>
 	</div>
 
-	<div id="Feedback_TvMovie" style="display:none;" class="instr">
-		<h3 class="pracQ">Describe your favorite movie or TV show. What is it about? Why do you like it?</h3>
+	<div id="Feedback" style="display:none;" class="instr">
+		<!-- Deleted line presenting question again due to putting both feedbacks on the same screen: -->
+		<!-- <h3 class="pracQ">Describe your favorite movie or TV show. What is it about? Why do you like it?</h3> -->
+		<h3 class="pracQ">Your Results</h3>
 		<div class="BoxSetup">
 			<div class="WhiteBoxLeft">
 				<div class="ViewMyUname"></div>
 				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
+				<div class="MyAnswer" id="leftanswer"></div>
 				<div class="like_arrow" id="TvConfedLikeArrow" style="display:none;right:30px;"></div>
 				<div class="dislike_arrow" id="TvConfedDislikeArrow" style="display:none;right:30px;"></div>
 			</div>
 			<div class="WhiteBoxRight">
-				<div class="usernamedemoratings"></div>
-				<div class="propicdemoratings"></div>
-				<div class="wkdanswerdemoratings"></div>
-			</div>
-			<button type="submit" id="cont_tvRatings" style="position: absolute;bottom: -200px;">Continue</button>
-		</div>
-	</div>
-
-	<div id="Feedback_Food" style="display:none;" class="instr">
-		<h3 class="pracQ">Describe your favorite meal or type of food. Why do you like it?</h3>
-		<div class="BoxSetup">
-			<div class="WhiteBoxLeft">
 				<div class="ViewMyUname"></div>
 				<div class="ViewMyPropic"></div>
-				<div class="MyAnswer"></div>
+				<div class="MyAnswer" id="rightanswer"></div>
 				<div class="like_arrow" id="FoodConfedLikeArrow" style="display:none;right:30px;"></div>
 				<div class="dislike_arrow" id="FoodConfedDislikeArrow" style="display:none;right:30px;"></div>
 			</div>
-			<div class="WhiteBoxRight">
-				<div class="usernamedemoratings"></div>
-				<div class="propicdemoratings"></div>
-				<div class="wkdanswerdemoratings"></div>
-			</div>
-			<button type="submit" id="cont_foodRatings" style="position: absolute;bottom: -200px;">Continue</button>
+			<button type="submit" id="cont_Ratings" style="top:450px;">Continue</button>
 		</div>
+	</div>
 	</div>
 
 	<div id="MotivationPost" style="display:none;" class="instr">

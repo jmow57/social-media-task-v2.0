@@ -330,20 +330,7 @@ function Results_Demo_Pictures(){
 
 function Ratings_Practice(){
 	$('#RatingsPractice').show();
-	$('.ViewMyUname').text(window.usernamePrac);
-	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatarPrac + ".png')");
-	$('.MyAnswer').text(window.weekend);
 	ShowRatingsProfilesPractice();
-	//TO CHANGE: In loop, add screen right after each rating where you see the confederate's rating of your response
-	//During this second (feedback) screen, might be helpful to add text explaining what the feedback means?
-}
-
-function Ratings_Practice2(){
-	$('#RatingsPractice2').show();
-	$('.ViewMyUname').text(window.usernamePrac);
-	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatarPrac + ".png')");
-	$('.MyAnswer').text(window.freetime);
-	ShowRatingsProfilesPractice2();
 }
 
 function ShowRatingsProfilesPractice(){
@@ -352,66 +339,79 @@ function ShowRatingsProfilesPractice(){
 	$('.wkdanswerdemoratings').text(window.profiles.confeds_prac[window.currConfed].response_wkd);
 }
 
+$('#like_arrow_demoratings').on('click',function () {
+	window.practiceClicks[window.currConfed] = 1;
+	$('#RatingsPractice').hide();
+	Ratings_Practice2();
+})
+
+$('#dislike_arrow_demoratings').on('click',function (){
+	window.practiceClicks[window.currConfed] = 0;
+	$('#RatingsPractice').hide();
+	Ratings_Practice2();
+})
+
+function Ratings_Practice2(){
+	$('#RatingsPractice2').show();
+	ShowRatingsProfilesPractice2();
+}
+
 function ShowRatingsProfilesPractice2(){
 	$('.usernamedemoratings').text(window.profiles.confeds_prac[window.currConfed].username);
 	$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_prac[window.currConfed].avatar+ ")");
 	$('.wkdanswerdemoratings').text(window.profiles.confeds_prac[window.currConfed].response_ft);
 }
 
-function ContinueRatings(){
-	if (window.currConfed >= 1) {
-		$('#RatingsPractice').hide();
-		window.currConfed = 0;
-		//jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
-		Prac_complete_instr();
-	} else {
-		window.currConfed++; //this is working in round 2
-		Motivation_Instr2();
-	}
+$('#like_arrow_demoratings2').on('click',function () {
+	window.practiceClicks[window.currConfed] = 1;
+	$('#RatingsPractice2').hide();
+	connect_feedback_prac();
+})
+
+$('#dislike_arrow_demoratings2').on('click',function (){
+	window.practiceClicks[window.currConfed] = 0;
+	$('#RatingsPractice2').hide();
+	connect_feedback_prac();
+})
+
+function connect_feedback_prac(){
+	$('#Cont_FeedbackPrac').show();
+	$('#cont_fbprac').on('click',function(){
+		$('#Cont_FeedbackPrac').hide();
+		FeedbackPrac();
+	})
 }
 
 function FeedbackPrac(){
 	$('#FeedbackPractice').show();
 	$('#likeline').show();
+	//Ptp answer for right box
+	$('.ViewMyUname').text(window.usernamePrac);
+	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatarPrac + ".png')");
+	$('#leftanswerprac').text(window.weekend);
+	//Ptp answer for left box
+	$('#rightanswerprac').text(window.freetime);
+	//Present "likes" for first practice confederate, and "dislikes" for the second one.
 	if (window.pracConfedRatings[window.currConfed]==1){
 		$('#pracConfedLikeArrow').show();
+		$('#pracConfedLikeArrow2').show();
 		$('#likeexplained').show();
 	}
 	if (window.pracConfedRatings[window.currConfed]==0){
 		$('#pracConfedDislikeArrow').show();
-		$('#dislikeexplained').show();
-	}
-}
-
-function FeedbackPrac2(){
-	$('#FeedbackPractice2').show();
-	$('#likeline').show();
-	if (window.pracConfedRatings[window.currConfed]==1){
-		$('#pracConfedLikeArrow2').show();
-		$('#likeexplained2').show();
-	}
-	if (window.pracConfedRatings[window.currConfed]==0){
 		$('#pracConfedDislikeArrow2').show();
-		$('#dislikeexplained2').show();
+		$('#dislikeexplained').show();
 	}
 }
 
 $('#cont_pracRatings').on('click',function() {
 	$('#FeedbackPractice').hide();
 	$('#pracConfedLikeArrow').hide();
+	$('#pracConfedLikeArrow2').hide();
 	$('#likeexplained').hide();
 	$('#pracConfedDislikeArrow').hide();
-	$('#dislikeexplained').hide();
-	$('#likeline').hide();
-	Ratings_Practice2();
-})
-
-$('#cont_pracRatings2').on('click',function() {
-	$('#FeedbackPractice2').hide();
-	$('#pracConfedLikeArrow2').hide();
-	$('#likeexplained2').hide();
 	$('#pracConfedDislikeArrow2').hide();
-	$('#dislikeexplained2').hide();
+	$('#dislikeexplained').hide();
 	$('#likeline').hide();
 	if (window.currConfed == 0){
 		PostMot_Instr();
@@ -420,72 +420,13 @@ $('#cont_pracRatings2').on('click',function() {
 	}
 })
 
-$('#like_arrow_demoratings').on('click',function () {
-	window.practiceClicks[window.currConfed] = 1;
-	$('#RatingsPractice').hide();
-	FeedbackPrac();
-})
-
-$('#dislike_arrow_demoratings').on('click',function (){
-	window.practiceClicks[window.currConfed] = 0;
-	$('#RatingsPractice').hide();
-	FeedbackPrac();
-})
-
-$('#like_arrow_demoratings2').on('click',function () {
-	window.practiceClicks[window.currConfed] = 1;
-	$('#RatingsPractice2').hide();
-	FeedbackPrac2();
-})
-
-$('#dislike_arrow_demoratings2').on('click',function (){
-	window.practiceClicks[window.currConfed] = 0;
-	$('#RatingsPractice2').hide();
-	FeedbackPrac2();
-})
-
 function PostMot_Instr(){
 	$('#PostMotInstr').show();
 	$('#cont_postmotinstr').on('click',function (){
 		$('#PostMotInstr').hide();
 		PracPostDefeatist();
 	})
-
 }
-
-function PracPostMot(){
-	$('#PracMotivationPost').show();
-}
-
-$('#PracMot0_2').on('click',function() {
-	window.motivationRatings.push(0);
-	$('#PracMotivationPost').hide();
-	ContinueRatings();
-})
-
-$('#PracMot1_2').on('click',function() {
-	window.motivationRatings.push(1);
-	$('#PracMotivationPost').hide();
-	ContinueRatings();
-})
-
-$('#PracMot2_2').on('click',function() {
-	window.motivationRatings.push(2);
-	$('#PracMotivationPost').hide();
-	ContinueRatings();
-})
-
-$('#PracMot3_2').on('click',function() {
-	window.motivationRatings.push(3);
-	$('#PracMotivationPost').hide();
-	ContinueRatings();
-})
-
-$('#PracMot4_2').on('click',function() {
-	window.motivationRatings.push(4);
-	$('#PracMotivationPost').hide();
-	ContinueRatings();
-})
 
 function PracPostDefeatist(){
 	$('#PracDefeatistPost').show();
@@ -521,6 +462,51 @@ $('#PracDef4').on('click',function() {
 	PracPostMot();
 })
 
+function PracPostMot(){
+	$('#PracMotivationPost').show();
+}
+
+$('#PracMot0_2').on('click',function() {
+	window.motivationRatings.push(0);
+	$('#PracMotivationPost').hide();
+	ContinueRatings();
+})
+
+$('#PracMot1_2').on('click',function() {
+	window.motivationRatings.push(1);
+	$('#PracMotivationPost').hide();
+	ContinueRatings();
+})
+
+$('#PracMot2_2').on('click',function() {
+	window.motivationRatings.push(2);
+	$('#PracMotivationPost').hide();
+	ContinueRatings();
+})
+
+$('#PracMot3_2').on('click',function() {
+	window.motivationRatings.push(3);
+	$('#PracMotivationPost').hide();
+	ContinueRatings();
+})
+
+$('#PracMot4_2').on('click',function() {
+	window.motivationRatings.push(4);
+	$('#PracMotivationPost').hide();
+	ContinueRatings();
+})
+
+function ContinueRatings(){
+	if (window.currConfed >= 1) {
+		$('#RatingsPractice').hide();
+		window.currConfed = 0;
+		//jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
+		Prac_complete_instr();
+	} else {
+		window.currConfed++; //this is working in round 2
+		Motivation_Instr2();
+	}
+}
 
 function Prac_complete_instr(){
 	$('#PracContinueInstr').show();
@@ -670,10 +656,15 @@ function Pre_Connect_Instr() {
 function Connecting() {
 	 $('#ConnectScreen').show();
 
+	if (window.currConfed==0){
+		window.time = 10000; //always 10 seconds on the first connection
+	} else {
+		window.time = Math.floor(Math.random()*5000)+1500; //between 1.5 seconds and 5 seconds
+	}
   	setTimeout(function() {
   		$('#ConnectedtoPeople').show();
   		$('#ConnectScreen').hide();
-  	}, Math.floor(Math.random()*3000)+1500); //between 1.5 seconds and 3 seconds
+  	}, time); 
   	$('#cont_connect').on('click',function() {
 		$('#ConnectScreen').hide();
 		$('#ConnectedtoPeople').hide();
@@ -731,7 +722,7 @@ function Give_Ratings_tvmovie() {
 function ShowRatingsTvMovie() {
 	$('.ViewMyUname').text(window.username);
 	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatar + ".png')");
-	$('.MyAnswer').text(window.tvmovie);
+	$('#leftanswer').text(window.tvmovie);
 	if (window.conditions[window.currConfed] === 0){
 		$('.usernamedemoratings').text(window.profiles.confeds_reward[window.currReward].username);
 		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reward[window.currReward].avatar+ ")");
@@ -767,7 +758,7 @@ function Give_Ratings_food() {
 function ShowRatingsFood() {
 	$('.ViewMyUname').text(window.username);
 	$('.ViewMyPropic').css("background-image", "url('avatars/" + window.avatar + ".png')");
-	$('.MyAnswer').text(window.food);
+	$('#rightanswer').text(window.food);
 	if (window.conditions[window.currConfed] === 0){
 		$('.usernamedemoratings').text(window.profiles.confeds_reward[window.currReward].username);
 		$('.propicdemoratings').css("background-image", "url(" + window.profiles.confeds_reward[window.currReward].avatar+ ")");
@@ -801,7 +792,7 @@ function Waiting() {
   	setTimeout(function() {
   		$('#WaitScreen').hide();
   		connect_feedback();
-  	}, Math.floor(Math.random()*3000)+1500); //between 1.5 and 3 seconds
+  	}, Math.floor(Math.random()*5000)+1500); //between 1.5 and 5 seconds
 }
 
 function connect_feedback() {
@@ -810,11 +801,11 @@ function connect_feedback() {
 
 $('#cont_fb').on('click',function() {
 	$('#Cont_Feedback').hide();
-	FeedbackTvMovie();
+	Feedback_All();
 })
 
-function FeedbackTvMovie() {
-	$('#Feedback_TvMovie').show();
+function Feedback_All() {
+	$('#Feedback').show();
 	ShowRatingsTvMovie();
 	if (window.conditions[window.currConfed]==0){
 		$('#TvConfedLikeArrow').show();
@@ -828,17 +819,7 @@ function FeedbackTvMovie() {
 	} else if (window.conditions[window.currConfed]==2){
 		$('#TvConfedDislikeArrow').show();
 	}
-}
 
-$('#cont_tvRatings').on('click',function() {
-	$('#Feedback_TvMovie').hide();
-	$('#TvConfedLikeArrow').hide();
-	$('#TvConfedDislikeArrow').hide();
-	FeedbackFood();
-})
-
-function FeedbackFood() {
-	$('#Feedback_Food').show();
 	ShowRatingsFood();
 	if (window.conditions[window.currConfed]==0){
 		window.currReward++;
@@ -856,8 +837,10 @@ function FeedbackFood() {
 	}
 }
 
-$('#cont_foodRatings').on('click',function() {
-	$('#Feedback_Food').hide();
+$('#cont_Ratings').on('click',function() {
+	$('#Feedback').hide();
+	$('#TvConfedLikeArrow').hide();
+	$('#TvConfedDislikeArrow').hide();
 	$('#FoodConfedLikeArrow').hide();
 	$('#FoodConfedDislikeArrow').hide();
 	defeatist_rating_post();
@@ -1042,11 +1025,8 @@ $('#NT4').on('click',function() {
 set_settings();
 
 //intro_init();
-//enter_username_practice();
-PracPreMot();
 
-
-//enter_username();
+enter_username();
 
 
 });
