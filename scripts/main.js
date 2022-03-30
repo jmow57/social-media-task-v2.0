@@ -1,18 +1,18 @@
 $(function() { 
 	document.body.style.background = "#F2FCFF";
 
-	// function findGetParameter(parameterName) {
-	//     var result = null,
-	//         tmp = [];
-	//     location.search
-	//         .substr(1)
-	//         .split("?")
-	//         .forEach(function (item) {
-	//           tmp = item.split("=");
-	//           if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-	//         });
-	//     return result;
-	// }
+	function findGetParameter(parameterName) {
+	    var result = null,
+	        tmp = [];
+	    location.search
+	        .substr(1)
+	        .split("?")
+	        .forEach(function (item) {
+	          tmp = item.split("=");
+	          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+	        });
+	    return result;
+	}
 
 //Set up global variables
 function set_settings(){
@@ -27,55 +27,46 @@ function set_settings(){
 	window.pracmotivationRatings = [];
 	window.defeatistRatings = [];
 	window.PracdefeatistRatings = [];
-	window.pracConfedRatings = [1,0];
-	window.confedRatings = [[1,5],[2,4],[3,3],[3,3],[4,2],[5,1]];
+	window.pracConfedRatings = [1,0]; //1 = reward, 0 = reject (NOTE: DIFFERENT FROM CONDITIONS BELOW)
 	window.conditions = [0,0,2,1,2,0,2,0,1,1,2,1,0,1,0,2,0,1,1,2,2,1,2,0,1,0,2,0,1,2]; //pseudorandomized using excel
-	//[1,1,1,1,1,1,1,1,1,1,1];
-	//[0,1,2,0,1,2,0,1,2,0,1,2]; //THIS NEEDS TO BE FIXED/RANDOMIZED/MADE TO REACH 30; 0=reward, 1=ambig, 2=reject
+		//0=reward, 1=ambig, 2=reject
 	window.currReward = 0;
 	window.currAmbig = 0;
 	window.currReject = 0;
-	 //randomize waiting time between 6 and 8 seconds
-	window.waitTimings = [Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000,
-						  Math.floor(Math.random()*8000)+6000,Math.floor(Math.random()*8000)+6000];
-	 //randomize connecting time between 4 and 6 seconds
-	window.connectTimings = [Math.floor(Math.random()*6000)+4000,Math.floor(Math.random()*6000)+4000,Math.floor(Math.random()*6000)+4000,
-							 Math.floor(Math.random()*6000)+4000,Math.floor(Math.random()*6000)+4000];
 	window.needThreatAnswers = [];
 	window.firstAmbResp = 999;
 
 	//COMMENT BELOW LINES OUT FOR TESTING OUTSIDE PAVLOVIA
-	// window.finishExperimentAndSave = undefined;
-	// jsPsych.init({timeline:[
-	// 	{
-	// 		type: "pavlovia",
-	// 		command: "init"
-	// 	},
-	// 	{
-	// 		type:'call-function',
-	// 		async:true,
-	// 		func:function(done){
-// 	    		window.finishExperimentAndSave = done;
-// 			}
-// 		},
-// 		{
-// 			type: "pavlovia",
-// 			command: "finish",
-// 			participantId: window.ptpID
-// 		}
-// 	], display_element: 'jspsych-target'});
+	window.finishExperimentAndSave = undefined;
+	jsPsych.init({timeline:[
+		{
+			type: "pavlovia",
+			command: "init"
+		},
+		{
+			type:'call-function',
+			async:true,
+			func:function(done){
+	    		window.finishExperimentAndSave = done;
+			}
+		},
+		{
+			type: "pavlovia",
+			command: "finish",
+			participantId: window.ptpID
+		}
+	], display_element: 'jspsych-target'});
 
-// }
 }
 
 //Present instructions #1
 function intro_init(){
 	$('#intro1').show();
 
-	// window.ptpID = findGetParameter('ptpID');
-	// window.session = findGetParameter('session');
-	window.ptpID = '0000';
-	window.session = '0000'; //temp until working in pavlovia
+	window.ptpID = findGetParameter('ptpID');
+	window.session = findGetParameter('session');
+	//window.ptpID = '0000';
+	//window.session = '0000'; //temp until working in pavlovia
 	jsPsych.data.get().push(['ptpID', window.ptpID]);
 	jsPsych.data.get().push(['session',window.session]);
 
@@ -102,7 +93,6 @@ function intro_practice(){
 		enter_username_practice();
 	})
 
-	//window.finishExperimentAndSave();
 }
 
 //Enter username for practice round
@@ -150,7 +140,7 @@ function choose_avatar_practice(){
   			$('#avatarP').hide();
   			window.avatarPrac = $('.selected').attr('id');
   			window.avatarPracExport = /avatar_([^\s]+)/.exec(window.avatarPrac)[1];
-  			//jsPsych.data.get().push(['PracticeAvatar',window.avatarPrac]); //un-comment when running real task
+  			jsPsych.data.get().push(['PracticeAvatar',window.avatarPrac]); //un-comment when running real task
     		qainstr1();  			
     	} else {
     		alertify.log("Please select an avatar","error");
@@ -467,31 +457,31 @@ function PracPostMot(){
 }
 
 $('#PracMot0_2').on('click',function() {
-	window.motivationRatings.push(0);
+	window.pracmotivationratings.push(0);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot1_2').on('click',function() {
-	window.motivationRatings.push(1);
+	window.pracmotivationratings.push(1);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot2_2').on('click',function() {
-	window.motivationRatings.push(2);
+	window.pracmotivationratings.push(2);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot3_2').on('click',function() {
-	window.motivationRatings.push(3);
+	window.pracmotivationratings.push(3);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot4_2').on('click',function() {
-	window.motivationRatings.push(4);
+	window.pracmotivationratings.push(4);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
@@ -500,7 +490,9 @@ function ContinueRatings(){
 	if (window.currConfed >= 1) {
 		$('#RatingsPractice').hide();
 		window.currConfed = 0;
-		//jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
+		jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
+		jsPsych.data.get().push(['PracticeMotivation',window.pracmotivationratings]);
+		jsPsych.data.get().push(['PracticeDefeatist',window.PracdefeatistRatings]);
 		Prac_complete_instr();
 	} else {
 		window.currConfed++; //this is working in round 2
@@ -954,7 +946,7 @@ $('#NT0').on('click',function() {
 		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
-		$('#Completed').show();
+		Finished();
 	} else {
 		QuestionNum++;
 		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
@@ -969,7 +961,7 @@ $('#NT1').on('click',function() {
 		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
-		$('#Completed').show();
+		Finished();
 	} else {
 		QuestionNum++;
 		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
@@ -984,7 +976,7 @@ $('#NT2').on('click',function() {
 		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
-		$('#Completed').show();
+		Finished();
 	} else {
 		QuestionNum++;
 		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
@@ -999,7 +991,7 @@ $('#NT3').on('click',function() {
 		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
-		$('#Completed').show();
+		Finished();
 	} else {
 		QuestionNum++;
 		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
@@ -1014,7 +1006,7 @@ $('#NT4').on('click',function() {
 		window.currConfed++;
 		Connecting();
 	} else if (QuestionNum >= 23 && window.currConfed === window.totalConfeds-1) {
-		$('#Completed').show();
+		Finished();
 	} else {
 		QuestionNum++;
 		$('#NTQ').text(window.questionnaireQs.questions[QuestionNum].q)
@@ -1022,11 +1014,18 @@ $('#NT4').on('click',function() {
 	}
 })
 
+function Finished(){
+	$('#Completed').show();
+	jsPsych.data.get().push(['ParticipantRatings',window.fullClicks]);
+	jsPsych.data.get().push(['MotivationRatings',window.motivationRatings]);
+	jsPsych.data.get().push(['DefeatistRatings',window.defeatistRatings]);
+	jsPsych.data.get().push(['NeedThreatAnswers',window.needThreatAnswers]);
+	window.finishExperimentAndSave();
+}
+
 set_settings();
 
-//intro_init();
-
-enter_username();
+intro_init();
 
 
 });
