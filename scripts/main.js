@@ -355,13 +355,15 @@ function ShowRatingsProfilesPractice2(){
 }
 
 $('#like_arrow_demoratings2').on('click',function () {
-	window.practiceClicks[window.currConfed] = 1;
+	//window.practiceClicks[window.currConfed] = 1;
+	window.practiceClicks.push(1);
 	$('#RatingsPractice2').hide();
 	connect_feedback_prac();
 })
 
 $('#dislike_arrow_demoratings2').on('click',function (){
-	window.practiceClicks[window.currConfed] = 0;
+	//window.practiceClicks[window.currConfed] = 0;
+	window.practiceClicks.push(0);
 	$('#RatingsPractice2').hide();
 	connect_feedback_prac();
 })
