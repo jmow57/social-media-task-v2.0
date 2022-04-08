@@ -330,13 +330,15 @@ function ShowRatingsProfilesPractice(){
 }
 
 $('#like_arrow_demoratings').on('click',function () {
-	window.practiceClicks[window.currConfed] = 1;
+	//window.practiceClicks[window.currConfed] = 1;
+	window.practiceClicks.push(1);
 	$('#RatingsPractice').hide();
 	Ratings_Practice2();
 })
 
 $('#dislike_arrow_demoratings').on('click',function (){
-	window.practiceClicks[window.currConfed] = 0;
+	//window.practiceClicks[window.currConfed] = 0;
+	window.practiceClicks.push(0);
 	$('#RatingsPractice').hide();
 	Ratings_Practice2();
 })
