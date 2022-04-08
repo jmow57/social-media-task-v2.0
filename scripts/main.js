@@ -457,31 +457,31 @@ function PracPostMot(){
 }
 
 $('#PracMot0_2').on('click',function() {
-	window.pracmotivationratings.push(0);
+	window.pracmotivationRatings.push(0);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot1_2').on('click',function() {
-	window.pracmotivationratings.push(1);
+	window.pracmotivationRatings.push(1);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot2_2').on('click',function() {
-	window.pracmotivationratings.push(2);
+	window.pracmotivationRatings.push(2);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot3_2').on('click',function() {
-	window.pracmotivationratings.push(3);
+	window.pracmotivationRatings.push(3);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
 
 $('#PracMot4_2').on('click',function() {
-	window.pracmotivationratings.push(4);
+	window.pracmotivationRatings.push(4);
 	$('#PracMotivationPost').hide();
 	ContinueRatings();
 })
@@ -491,7 +491,7 @@ function ContinueRatings(){
 		$('#RatingsPractice').hide();
 		window.currConfed = 0;
 		jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
-		jsPsych.data.get().push(['PracticeMotivation',window.pracmotivationratings]);
+		jsPsych.data.get().push(['PracticeMotivation',window.pracmotivationRatings]);
 		jsPsych.data.get().push(['PracticeDefeatist',window.PracdefeatistRatings]);
 		Prac_complete_instr();
 	} else {
