@@ -29,14 +29,14 @@ function set_settings(){
 	window.PracdefeatistRatings = [];
 	window.pracConfedRatings = [1,0]; //1 = reward, 0 = reject (NOTE: DIFFERENT FROM CONDITIONS BELOW)
 	window.conditions = [0,0,2,1,2,0,2,0,1,1,2,1,0,1,0,2,0,1,1,2,2,1,2,0,1,0,2,0,1,2]; //pseudorandomized using excel
-		//0=reward, 1=ambig, 2=reject
+		//0=reward, 1=ambiguous, 2=rejection
 	window.currReward = 0;
 	window.currAmbig = 0;
 	window.currReject = 0;
 	window.needThreatAnswers = [];
 	window.firstAmbResp = 999;
 
-	//COMMENT BELOW LINES OUT FOR TESTING OUTSIDE PAVLOVIA
+	//These 19 lines below are included for using with the service Pavlovia. If not using Pavlovia, comment these lines out.
 	window.finishExperimentAndSave = undefined;
 	jsPsych.init({timeline:[
 		{
@@ -65,8 +65,8 @@ function intro_init(){
 
 	window.ptpID = findGetParameter('ptpID');
 	window.session = findGetParameter('session');
-	//window.ptpID = '0000';
-	//window.session = '0000'; //temp until working in pavlovia
+	//window.ptpID = '0000'; //testing values
+	//window.session = '0000'; //testing values
 	jsPsych.data.get().push(['ptpID', window.ptpID]);
 	jsPsych.data.get().push(['session',window.session]);
 
@@ -494,12 +494,12 @@ function ContinueRatings(){
 	if (window.currConfed >= 1) {
 		$('#RatingsPractice').hide();
 		window.currConfed = 0;
-		jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //un-comment this when running real task
+		jsPsych.data.get().push(['PracticeRatings',window.practiceClicks]); //comment this out if you want to run through faster for testing purposes.
 		jsPsych.data.get().push(['PracticeMotivation',window.pracmotivationRatings]);
 		jsPsych.data.get().push(['PracticeDefeatist',window.PracdefeatistRatings]);
 		Prac_complete_instr();
 	} else {
-		window.currConfed++; //this is working in round 2
+		window.currConfed++;
 		Motivation_Instr2();
 	}
 }

@@ -15,7 +15,7 @@ window.profiles = {
         "response_wkd": "My family and I grabbed lunch on Commonwealth Avenue at a Thai place. I got pad thai which tasted great. I recommend it.",
         "response_ft": "In the summer, I like to go to the beach in my free time. I live close to the beach so it's very easy and relaxing. In the winter I mostly watch movies."
       },
-      {
+      { //Additional practice avatars, unused.
         "avatar": "avatars/avatar_35.png",
         "username": "Person 3",
         "response_wkd": "So last weekend me and my friends found a nice farmers market. We got fruits and vegeables and are going to have a friend dinner tonight."
